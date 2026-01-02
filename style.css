@@ -111,3 +111,36 @@ footer {
     padding: 20px;
   }
 }
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.contact-btn.phone {
+  background-color: #28a745;
+}
+
+.contact-btn.email {
+  background-color: #0d6efd;
+}
+
+.contact-btn.map {
+  background-color: #6f42c1;
+}
+
+.contact-btn:hover {
+  opacity: 0.9;
+}
