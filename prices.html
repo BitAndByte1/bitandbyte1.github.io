@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ценоразпис – Бит & Байт</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu">
+    <div class="menu-handle">☰</div>
+    <div class="menu-content">
+  <a href="index.html">🏠 Начало</a>
+  <a href="prices.html" class="active">💰 Ценоразпис</a>
+  <a href="laptops.html">💻 Лаптопи</a>
+
+</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" style="min-height:auto; padding:40px 20px;">
+    <div class="hero-content">
+      <h1>Ценоразпис</h1>
+      <p>Основни услуги</p>
+    </div>
+  </header>
+
+  <!-- НАШИТЕ УСЛУГИ -->
+  <section class="products">
+    <div class="product-card">
+      <h3>Почистване и профилактика</h3>
+      <p class="price">от 30 лв.</p>
+    </div>
+
+    <div class="product-card">
+      <h3>Смяна на термопаста</h3>
+      <p class="price">от 25 лв.</p>
+    </div>
+
+    <div class="product-card">
+      <h3>Почистване + Смяна на термопаста</h3>
+      <p class="price">от 40 лв.</p>
+    </div>
+
+    <div class="product-card">
+      <h3>Разглобяване / сглобяване</h3>
+      <p class="price">от 20 лв.</p>
+    </div>
+  </section>
+
+  <!-- ЗАЩО ДА ИЗБЕРЕТЕ -->
+  <section class="info">
+    <h2>Защо да изберете Бит & Байт</h2>
+    <ul>
+      <li>✔ Честно и ясно обслужване</li>
+      <li>✔ Без продажба на хардуер</li>
+      <li>✔ Фокус върху профилактика и поддръжка</li>
+      <li>✔ Подходящо за лаптопи и настолни компютри</li>
+    </ul>
+  </section>
+
+  <!-- КОНТАКТИ -->
+  <section class="contact">
+    <h2>Контакти</h2>
+    <div class="contact-buttons">
+      <a href="tel:0884870152" class="btn phone">📞 Обади се</a>
+      <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Изпрати имейл</a>
+      <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">
+        📍 Отвори в Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- FIXED CALL BUTTON -->
+  <a href="tel:0884870152" class="call-button">📞</a>
+
+  <!-- SCRIPT -->
+  <script>
+    const menu = document.querySelector('.side-menu');
+    const handle = document.querySelector('.menu-handle');
+
+    handle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.menu-content a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !handle.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>

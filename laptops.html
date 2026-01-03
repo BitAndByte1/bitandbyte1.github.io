@@ -4,36 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лаптопи – Бит & Байт</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="hero" style="min-height:auto; padding:40px 20px;">
-  <div class="hero-content">
-    <h1>Лаптопи</h1>
-    <p>Налични артикули</p>
-  </div>
-</header>
+  <!-- SIDE MENU -->
+  <div class="side-menu">
+    <div class="menu-handle">☰</div>
+    <div class="menu-content">
+  <a href="index.html">🏠 Начало</a>
+  <a href="prices.html">💰 Ценоразпис</a>
+  <a href="laptops.html" class="active">💻 Лаптопи</a>
 
-<section class="products">
-  <div class="product-card">
-    <img src="images/laptop1.jpg" alt="Laptop">
-    <h3>Dell Latitude 5490</h3>
-    <p class="price">850 лв.</p>
+
+</div>
   </div>
 
-  <div class="product-card">
-    <img src="images/laptop2.jpg" alt="Laptop">
-    <h3>HP ProBook 450</h3>
-    <p class="price">780 лв.</p>
-  </div>
+  <!-- HERO -->
+  <header class="hero" style="min-height:auto; padding:40px 20px;">
+    <div class="hero-content">
+      <h1>Лаптопи</h1>
+      <p>Налични / примерни модели</p>
+    </div>
+  </header>
 
-  <div class="product-card">
-    <img src="images/laptop3.jpg" alt="Laptop">
-    <h3>Lenovo ThinkPad T480</h3>
-    <p class="price">920 лв.</p>
-  </div>
-</section>
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="product-card">
+      <img src="images/laptop1.jpg" alt="Dell Latitude 5490">
+      <h3>Dell Latitude 5490</h3>
+      <p class="price">850 лв.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/laptop2.jpg" alt="HP ProBook 450">
+      <h3>HP ProBook 450</h3>
+      <p class="price">780 лв.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480">
+      <h3>Lenovo ThinkPad T480</h3>
+      <p class="price">920 лв.</p>
+    </div>
+  </section>
+
+  <!-- FIXED CALL BUTTON -->
+  <a href="tel:0884870152" class="call-button">📞</a>
+
+  <!-- SCRIPT -->
+  <script>
+    const menu = document.querySelector('.side-menu');
+    const handle = document.querySelector('.menu-handle');
+
+    handle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.menu-content a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !handle.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>

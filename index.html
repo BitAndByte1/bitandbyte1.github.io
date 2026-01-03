@@ -7,18 +7,22 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- SIDE MENU -->
-<div class="side-menu">
-  <div class="menu-handle">☰</div>
-
-  <div class="menu-content">
-    <a href="laptops.html">💻 Лаптопи</a>
-  </div>
-</div>
 
 <body>
 
-  <!-- HERO -->
+  <!-- SIDE MENU -->
+  <div class="side-menu">
+    <div class="menu-handle">☰</div>
+    <div class="menu-content">
+  <a href="index.html" class="active">🏠 Начало</a>
+  <a href="prices.html">💰 Ценоразпис</a>
+  <a href="laptops.html">💻 Лаптопи</a>
+
+</div>
+    </div>
+  </div>
+
+  <!-- HERO / НАЧАЛНА СТРАНИЦА -->
   <header class="hero">
     <div class="hero-content">
       <img src="images/logo.png" alt="Бит & Байт" class="logo">
@@ -28,45 +32,42 @@
         Почистване • Профилактика • Смяна на термопаста
       </p>
 
-      <p class="hero-phone">📞 0884 870 152</p>
+      <div class="contact-buttons hero-buttons">
+  <a href="tel:0884870152" class="btn phone">📞 Обади се</a>
+  <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Имейл</a>
+  <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">
+    📍 Карта
+  </a>
+</div>
+
     </div>
   </header>
 
-  <!-- SERVICES -->
-  <section>
-    <h2>Нашите услуги</h2>
-    <ul>
-      <li>Почистване и профилактика на лаптопи и компютри</li>
-      <li>Смяна на термопаста и охлаждане</li>
-      <li>Сглобяване и разглобяване</li>
-      <li>Работа с части, предоставени от клиента</li>
-    </ul>
-  </section>
-  <section>
-  <h2>Защо да изберете Бит & Байт</h2>
-  <ul>
-    <li>Честно и ясно обслужване</li>
-    <li>Без продажба на хардуер</li>
-    <li>Фокус върху профилактика и поддръжка</li>
-    <li>Подходящо за лаптопи и настолни компютри</li>
-  </ul>
-</section>
+  <!-- FIXED CALL BUTTON -->
+  <a href="tel:0884870152" class="call-button">📞</a>
 
+  <!-- SCRIPT -->
+  <script>
+    const menu = document.querySelector('.side-menu');
+    const handle = document.querySelector('.menu-handle');
 
-  <!-- CONTACT BUTTONS -->
-  <section class="contact">
-    <h2>Контакти</h2>
+    handle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
 
-    <div class="contact-buttons">
-      <a href="tel:0884870152" class="btn phone">📞 Обади се</a>
-      <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Изпрати имейл</a>
-      <a href="https://www.google.com/maps/place/ж.к.+Дианабад,+бул.+„Драган+Цанков“+59В,+1172+София/@42.6639893,23.3549148,20z/data=!4m6!3m5!1s0x40aa843299447735:0xed8637afddc6546f!8m2!3d42.6642038!4d23.3551555!16s%2Fg%2F11c250y6kw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D" class="btn map">📍 Отвори в Google Maps</a>
-    </div>
-  </section>
+    document.querySelectorAll('.menu-content a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+      });
+    });
 
-  <footer>
-    © 2026 Бит & Байт
-  </footer>
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !handle.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>
