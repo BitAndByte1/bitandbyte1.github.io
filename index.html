@@ -3,71 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO TITLE -->
   <title>Бит & Байт – Компютърен сервиз в София</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- SEO DESCRIPTION -->
+  <meta name="description" content="Бит & Байт – компютърен сервиз в София, район Дианабад. Почистване, профилактика и смяна на термопаста за лаптопи и компютри. Тел: 0884 870 152">
+
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- SIDE MENU -->
-  <div class="side-menu">
-    <div class="menu-handle">☰</div>
-    <div class="menu-content">
-  <a href="index.html" class="active">🏠 Начало</a>
-  <a href="prices.html">💰 Ценоразпис</a>
-  <a href="laptops.html">💻 Лаптопи</a>
-
-</div>
-    </div>
+<!-- SIDE MENU -->
+<div class="side-menu">
+  <div class="menu-handle">☰</div>
+  <div class="menu-content">
+    <a href="index.html" class="active">🏠 Начало</a>
+    <a href="prices.html">💰 Ценоразпис</a>
+    <a href="laptops.html">💻 Лаптопи</a>
   </div>
-
-  <!-- HERO / НАЧАЛНА СТРАНИЦА -->
-  <header class="hero">
-    <div class="hero-content">
-      <img src="images/logo.png" alt="Бит & Байт" class="logo">
-
-      <p class="hero-text">
-        Компютърен сервиз в София<br>
-        Почистване • Профилактика • Смяна на термопаста
-      </p>
-
-      <div class="contact-buttons hero-buttons">
-  <a href="tel:0884870152" class="btn phone">📞 Обади се</a>
-  <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Имейл</a>
-  <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">
-    📍 Карта
-  </a>
 </div>
 
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+
+    <!-- LANGUAGE SWITCH -->
+    <div class="lang-switch">
+      <a href="index-en.html">EN</a>
     </div>
-  </header>
 
-  <!-- FIXED CALL BUTTON -->
-  <a href="tel:0884870152" class="call-button">📞</a>
+    <img src="images/logo.png" class="logo" alt="Бит & Байт – Компютърен сервиз в София">
 
-  <!-- SCRIPT -->
-  <script>
-    const menu = document.querySelector('.side-menu');
-    const handle = document.querySelector('.menu-handle');
+    <!-- H1 (НАЙ-ВАЖНО ЗА SEO) -->
+    <h1>Компютърен сервиз в София</h1>
 
-    handle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menu.classList.toggle('open');
-    });
+    <p class="hero-text">
+      Почистване • Профилактика • Смяна на термопаста<br>
+      Лаптопи и настолни компютри – район Дианабад
+    </p>
 
-    document.querySelectorAll('.menu-content a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-      });
-    });
+    <div class="contact-buttons hero-buttons">
+      <a href="tel:0884870152" class="btn phone">📞 0884 870 152</a>
+      <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Имейл</a>
+      <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">
+        📍 София – Дианабад
+      </a>
+    </div>
 
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !handle.contains(e.target)) {
-        menu.classList.remove('open');
-      }
-    });
-  </script>
+  </div>
+</header>
+
+<!-- FIXED CALL BUTTON -->
+<a href="tel:0884870152" class="call-button">📞</a>
+
+<!-- SCRIPT -->
+<script>
+const menu = document.querySelector('.side-menu');
+const handle = document.querySelector('.menu-handle');
+
+handle.addEventListener('click', e => {
+  e.stopPropagation();
+  menu.classList.toggle('open');
+});
+
+document.addEventListener('click', e => {
+  if (!menu.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+</script>
 
 </body>
 </html>

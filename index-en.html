@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bit & Byte – Computer Repair Service in Sofia</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="side-menu">
+  <div class="menu-handle">☰</div>
+  <div class="menu-content">
+    <a href="index-en.html" class="active">🏠 Home</a>
+    <a href="prices-en.html">💰 Prices</a>
+    <a href="laptops-en.html">💻 Laptops</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-content">
+
+    <div class="lang-switch">
+      <a href="index.html">BG</a>
+    </div>
+
+    <img src="images/logo.png" class="logo" alt="Bit & Byte">
+
+    <p class="hero-text">
+      Computer repair service in Sofia<br>
+      Cleaning • Maintenance • Thermal paste replacement
+    </p>
+
+    <div class="contact-buttons hero-buttons">
+      <a href="tel:0884870152" class="btn phone">📞 Call</a>
+      <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Email</a>
+      <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">📍 Map</a>
+    </div>
+
+  </div>
+</header>
+
+<a href="tel:0884870152" class="call-button">📞</a>
+
+<script>
+const menu = document.querySelector('.side-menu');
+const handle = document.querySelector('.menu-handle');
+
+handle.onclick = e => {
+  e.stopPropagation();
+  menu.classList.toggle('open');
+};
+
+document.onclick = e => {
+  if (!menu.contains(e.target)) menu.classList.remove('open');
+};
+</script>
+
+</body>
+</html>
