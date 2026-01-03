@@ -143,3 +143,100 @@ footer {
     padding: 20px;
   }
 }
+/* SIDE MENU CONTAINER */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -180px;
+  width: 220px;
+  height: 100vh;
+
+  background: linear-gradient(
+    to bottom,
+    #071a2f,
+    #041225
+  );
+
+  transition: left 0.3s ease;
+  z-index: 999;
+  display: flex;
+}
+
+/* SIDE MENU - HIDDEN */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -170px; /* скрито изцяло */
+  width: 170px;
+  height: 100vh;
+
+  background: linear-gradient(
+    to bottom,
+    #071a2f,
+    #041225
+  );
+
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+/* SHOW MENU WHEN HOVER */
+.side-menu:hover {
+  left: 0;
+}
+
+/* HAMBURGER HANDLE (VISIBLE ALWAYS) */
+.menu-handle {
+  position: fixed;
+  top: 20px;
+  left: 0;
+
+  width: 48px;
+  height: 48px;
+
+  background: #0d6efd;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+  z-index: 1000;
+}
+
+/* MENU CONTENT */
+.menu-content {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* LINKS */
+.menu-content a {
+  padding: 14px 16px;          /* малко повече височина */
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 15px;             /* по-четимо */
+  font-weight: 600;
+  letter-spacing: 0.3px;       /* „разпуска“ текста */
+
+  display: flex;
+  align-items: center;
+  gap: 8px;                    /* разстояние икона ↔ текст */
+
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.2s ease;
+}
+
+.menu-content a:hover {
+  background: rgba(255,255,255,0.12);
+}
