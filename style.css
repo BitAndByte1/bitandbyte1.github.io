@@ -1,3 +1,4 @@
+/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -9,7 +10,7 @@ body {
   color: #f1f1f1;
 }
 
-/* HERO WITH BACKGROUND IMAGE */
+/* ================= HERO ================= */
 .hero {
   padding: 60px 20px 40px;
   display: flex;
@@ -50,12 +51,25 @@ body {
   margin-bottom: 12px;
 }
 
-.hero-phone {
-  font-size: 20px;
-  font-weight: bold;
+/* ================= LANGUAGE BUTTON ================= */
+.lang-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
-/* SECTIONS */
+.lang-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ================= SECTIONS ================= */
 section {
   background: #1a1d23;
   max-width: 900px;
@@ -70,7 +84,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* LIST */
+/* ================= LIST ================= */
 ul {
   list-style: none;
   padding: 0;
@@ -85,7 +99,7 @@ li::before {
   color: #4da3ff;
 }
 
-/* CONTACT BUTTONS */
+/* ================= CONTACT BUTTONS ================= */
 .contact-buttons {
   display: flex;
   flex-direction: column;
@@ -113,7 +127,7 @@ li::before {
 
 .btn:hover { opacity: 0.9; }
 
-/* PRODUCTS GRID (КВАДРАТЧЕТА) */
+/* ================= PRODUCTS GRID ================= */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -127,11 +141,9 @@ li::before {
   background: #0b1f36;
   border-radius: 14px;
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
   text-align: center;
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -160,14 +172,13 @@ li::before {
   margin-bottom: 16px;
 }
 
-/* SIDE MENU */
+/* ================= SIDE MENU ================= */
 .side-menu {
   position: fixed;
   top: 0;
   left: -170px;
   width: 170px;
   height: 100vh;
-
   background: linear-gradient(to bottom, #071a2f, #041225);
   transition: left 0.3s ease;
   z-index: 999;
@@ -184,18 +195,14 @@ li::before {
   left: 0;
   width: 48px;
   height: 48px;
-
   background: #0d6efd;
   color: #ffffff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-
   border-radius: 0 8px 8px 0;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   z-index: 1000;
@@ -205,22 +212,17 @@ li::before {
   padding-top: 80px;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .menu-content a {
   padding: 14px 16px;
   color: #ffffff;
   text-decoration: none;
-
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.3px;
-
   display: flex;
   align-items: center;
   gap: 8px;
-
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
@@ -243,25 +245,21 @@ li::before {
   background: #0d6efd;
 }
 
-/* FIXED CALL BUTTON */
+/* ================= FIXED CALL BUTTON ================= */
 .call-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 56px;
   height: 56px;
-
   background: #28a745;
   color: #fff;
-
   border-radius: 50%;
   font-size: 26px;
   text-decoration: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   z-index: 1000;
 }
@@ -270,33 +268,9 @@ li::before {
   background: #218838;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .logo { max-width: 170px; }
-}
-/* LANGUAGE SWITCH */
-.lang-switch {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 8px;
-}
-
-.lang-switch a {
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-}
-
-.lang-switch a:hover {
-  background: rgba(255,255,255,0.25);
-}
-
-.active-lang {
-  background: #0d6efd;
+  .logo {
+    max-width: 170px;
+  }
 }

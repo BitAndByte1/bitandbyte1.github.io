@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bit & Byte – Computer Repair Service in Sofia</title>
+
+  <title>Computer Repair Service in Sofia | Bit & Byte</title>
+  <meta name="description" content="Professional computer and laptop repair service in Sofia. Cleaning, maintenance and thermal paste replacement. Dianabad area.">
+
+  <link rel="alternate" hreflang="en" href="index-en.html">
+  <link rel="alternate" hreflang="bg" href="index.html">
+
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- SIDE MENU -->
 <div class="side-menu">
   <div class="menu-handle">☰</div>
   <div class="menu-content">
@@ -19,22 +26,25 @@
   </div>
 </div>
 
+<!-- HERO -->
 <header class="hero">
   <div class="hero-content">
 
-    <div class="lang-switch">
-      <a href="index.html">BG</a>
-    </div>
+    <!-- LANGUAGE BUTTON -->
+    <a href="index.html" class="lang-btn">BG</a>
 
-    <img src="images/logo.png" class="logo" alt="Bit & Byte">
+    <img src="images/logo.png" alt="Bit & Byte Computer Repair" class="logo">
+
+    <h1>Computer Repair Service in Sofia</h1>
 
     <p class="hero-text">
-      Computer repair service in Sofia<br>
-      Cleaning • Maintenance • Thermal paste replacement
+      Laptop & desktop repair<br>
+      Cleaning • Maintenance • Thermal paste replacement<br>
+      Dianabad area
     </p>
 
     <div class="contact-buttons hero-buttons">
-      <a href="tel:0884870152" class="btn phone">📞 Call</a>
+      <a href="tel:+359884870152" class="btn phone">📞 Call</a>
       <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Email</a>
       <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">📍 Map</a>
     </div>
@@ -42,20 +52,22 @@
   </div>
 </header>
 
-<a href="tel:0884870152" class="call-button">📞</a>
+<a href="tel:+359884870152" class="call-button">📞</a>
 
 <script>
 const menu = document.querySelector('.side-menu');
 const handle = document.querySelector('.menu-handle');
 
-handle.onclick = e => {
+handle.addEventListener('click', e => {
   e.stopPropagation();
   menu.classList.toggle('open');
-};
+});
 
-document.onclick = e => {
-  if (!menu.contains(e.target)) menu.classList.remove('open');
-};
+document.addEventListener('click', e => {
+  if (!menu.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
 </script>
 
 </body>
