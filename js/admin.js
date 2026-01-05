@@ -1,5 +1,5 @@
 import { monitorAuth, login, logout } from './auth.js';
-import { addLaptop, getLaptops, deleteLaptop, uploadImage } from './db.js';
+import { addLaptop, getLaptops, deleteLaptop } from './db.js';
 
 const loginSection = document.getElementById('loginSection');
 const dashboardSection = document.getElementById('dashboardSection');
@@ -32,11 +32,11 @@ addLaptopForm.addEventListener('submit', async (e) => {
     const statusMsg = document.getElementById('statusMessage');
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Качва се...';
+    submitBtn.textContent = 'Обработване...';
 
     statusMsg.style.display = 'block';
     statusMsg.style.color = '#fff';
-    statusMsg.textContent = 'Започване на процес...';
+    statusMsg.textContent = 'Обработване на снимката...';
 
     try {
         const model = document.getElementById('model').value;
@@ -46,39 +46,23 @@ addLaptopForm.addEventListener('submit', async (e) => {
 
         if (!imageFile) throw new Error("Моля изберете снимка!");
 
-        statusMsg.textContent = 'Качване на снимка... (Моля изчакайте)';
-        console.log("Start upload image:", imageFile.name);
+        // addLaptop now handles the image compression internally
+        await addLaptop(model, price, description, imageFile);
 
-        let imageUrl;
-        // TEMPORARY DEBUGGING: Allow proceeding even if image upload fails
-        try {
-            statusMsg.textContent = 'Качване на снимка...';
-            imageUrl = await uploadImage(imageFile);
-            console.log("Image uploaded, URL:", imageUrl);
-        } catch (imgErr) {
-            console.error("Upload failed, using placeholder:", imgErr);
-            statusMsg.textContent = 'Снимката не успя, но продължаваме...';
-            // Use a placeholder image so testing can continue
-            imageUrl = "https://via.placeholder.com/300x200?text=No+Image";
-            alert("ГРЕШКА ПРИ СНИМКА: " + imgErr.message + "\n\nЩе запишем лаптопа без снимка, за да тестваме базата данни.");
-        }
-
-        try {
-            await addLaptop(model, price, description, imageUrl);
-            console.log("Database entry added");
-            statusMsg.textContent = 'Успешно записано!';
-        } catch (dbErr) {
-            console.error("DB failed details:", dbErr);
-            throw new Error("Грешка при запис в базата: " + dbErr.message);
-        }
+        statusMsg.style.color = 'green';
+        statusMsg.textContent = 'Успешно записано!';
 
         addLaptopForm.reset();
         alert("Лаптопът е добавен успешно!");
-        statusMsg.style.display = 'none';
+
+        setTimeout(() => {
+            statusMsg.style.display = 'none';
+        }, 3000);
+
         loadProducts(); // Refresh list
     } catch (error) {
         statusMsg.style.color = 'red';
-        statusMsg.textContent = error.message;
+        statusMsg.textContent = "Грешка: " + error.message;
         console.error(error);
         alert("Грешка: " + error.message);
     } finally {
@@ -111,16 +95,16 @@ async function loadProducts() {
                     <p>${laptop.price} €</p>
                 </div>
             </div>
-            <button class="btn" style="background: #d9534f;" onclick="window.removeLaptop('${laptop.id}', '${laptop.imageUrl}')">Изтрий</button>
+            <button class="btn" style="background: #d9534f;" onclick="window.removeLaptop('${laptop.id}')">Изтрий</button>
         `;
         productList.appendChild(div);
     });
 }
 
 // Make removeLaptop available globally
-window.removeLaptop = async (id, imageUrl) => {
+window.removeLaptop = async (id) => {
     if (confirm('Сигурни ли сте, че искате да изтриете този лаптоп?')) {
-        await deleteLaptop(id, imageUrl);
+        await deleteLaptop(id);
         loadProducts();
     }
 };
