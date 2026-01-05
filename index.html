@@ -1,73 +1,193 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Бит & Байт – Компютърен сервиз в София</title>
-  <meta name="description" content="Компютърен сервиз в София – почистване, профилактика и смяна на термопаста. Лаптопи и настолни компютри. Район Дианабад.">
-
-  <link rel="alternate" hreflang="bg" href="index.html">
-  <link rel="alternate" hreflang="en" href="index-en.html">
-
+  <title>Бит & Байт – Професионален компютърен сервиз</title>
+  <meta name="description"
+    content="Вашият надежден сервиз за компютри и лаптопи в София. Почистване, диагностика, хардуер и софтуер.">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- SIDE MENU -->
-<div class="side-menu">
-  <div class="menu-handle">☰</div>
-  <div class="menu-content">
-    <a href="index.html" class="active">🏠 Начало</a>
-    <a href="prices.html">💰 Ценоразпис</a>
-    <a href="laptops.html">💻 Лаптопи</a>
-  </div>
-</div>
+  <!-- HEADER / TOP NAV -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Бит & Байт">
+        <span>Бит & Байт</span>
+      </a>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-content">
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Начало</a>
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="laptops.html" class="nav-link">Лаптопи</a>
+        <a href="prices.html" class="nav-link">Цени</a>
+        <a href="#about" class="nav-link">За Нас</a>
+        <a href="#contact" class="nav-link">Контакти</a>
+      </nav>
 
-    <!-- LANGUAGE BUTTON -->
-    <a href="index-en.html" class="lang-btn">EN</a>
-
-    <img src="images/logo.png" alt="Бит & Байт" class="logo">
-
-    <h1>Компютърен сервиз в София</h1>
-
-    <p class="hero-text">
-      Почистване • Профилактика • Смяна на термопаста<br>
-      Лаптопи и настолни компютри – район Дианабад
-    </p>
-
-    <div class="contact-buttons hero-buttons">
-      <a href="tel:0884870152" class="btn phone">📞 0884 870 152</a>
-      <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Имейл</a>
-      <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">📍 Карта</a>
+      <a href="index-en.html" class="nav-link"
+        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">EN</a>
     </div>
+  </header>
 
-  </div>
-</header>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Вашият надежден сервиз за<br> <span class="text-accent">компютри и лаптопи</span> в София</h1>
+      <p>Бърза диагностика, качествен ремонт и професионално обслужване за вашата техника в район Дианабад.</p>
 
-<a href="tel:0884870152" class="call-button">📞</a>
+      <div class="hero-buttons">
+        <a href="#services" class="btn">Виж Услугите</a>
+        <a href="#contact" class="btn btn-outline">Свържи се с нас</a>
+      </div>
+    </div>
+  </section>
 
-<script>
-const menu = document.querySelector('.side-menu');
-const handle = document.querySelector('.menu-handle');
+  <!-- HIGHLIGHTS / FEATURES -->
+  <section class="section bg-darker">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-wrench"></i></div>
+          <h3>Ремонт на устройства</h3>
+          <p>Извършваме ремонти на всички видове лаптопи и настолни компютри, включително смяна на дисплеи, клавиатури и
+            други компоненти.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Профилактика</h3>
+          <p>Почистване от прах, смяна на термопаста и оптимизация на охлаждането за по-добра работа и дълъг живот на
+            техниката.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-download"></i></div>
+          <h3>Софтуер</h3>
+          <p>Инсталиране и преинсталиране на операционни системи, драйвери и специализиран софтуер. Премахване на
+            вируси.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-handle.addEventListener('click', e => {
-  e.stopPropagation();
-  menu.classList.toggle('open');
-});
+  <!-- ABOUT US -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title" style="text-align: left; margin: 0 0 20px;">Кои сме ние?</h2>
+          <p>"Бит & Байт" е вашият доверен партньор за всякакви компютърни проблеми. Ние сме екип от ентусиасти и
+            професионалисти, които вярват, че техниката трябва да работи за вас, а не против вас.</p>
+          <p>Разположени в сърцето на Дианабад, ние предлагаме бързи и надеждни решения както за частни клиенти, така и
+            за малкия бизнес.</p>
+          <a href="#contact" class="btn btn-outline" style="color: #000; border-color: #007bff; color: #007bff;">Научете
+            повече</a>
+        </div>
+        <div class="about-image">
+          <!-- Placeholder image until real one is provided -->
+          <div
+            style="width: 100%; height: 300px; background: #222; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-users" style="font-size: 60px; color: #333;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-document.addEventListener('click', e => {
-  if (!menu.contains(e.target)) {
-    menu.classList.remove('open');
-  }
-});
-</script>
+  <!-- SERVICES GRID -->
+  <section class="section bg-darker" id="services">
+    <div class="container">
+      <h2 class="section-title">Нашите Услуги</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-img">
+            <!-- Placeholder -->
+            <i class="fas fa-wind" style="font-size: 50px;"></i>
+          </div>
+          <div class="service-info">
+            <h3>Почистване и Профилактика</h3>
+            <p style="color: #888; font-size: 14px;">Пълно разглобяване и почистване на охладителната система.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-stethoscope" style="font-size: 50px;"></i>
+          </div>
+          <div class="service-info">
+            <h3>Диагностика</h3>
+            <p style="color: #888; font-size: 14px;">Бързо и точно установяване на хардуерни и софтуерни проблеми.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-database" style="font-size: 50px;"></i>
+          </div>
+          <div class="service-info">
+            <h3>Възстановяване на данни</h3>
+            <p style="color: #888; font-size: 14px;">Спасяване на информация от повредени дискове и носители.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <i class="fas fa-network-wired" style="font-size: 50px;"></i>
+          </div>
+          <div class="service-info">
+            <h3>Мрежи и Интернет</h3>
+            <p style="color: #888; font-size: 14px;">Настройка на рутери, локални мрежи и оптимизация.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="prices.html" class="btn">Виж ценоразпис</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Контакти</h3>
+          <p><i class="fas fa-map-marker-alt" style="width: 20px;"></i> ж.к. Дианабад, София</p>
+          <a href="tel:0884870152"><i class="fas fa-phone" style="width: 20px;"></i> 0884 870 152</a>
+          <a href="mailto:todorovnikola00@gmail.com"><i class="fas fa-envelope" style="width: 20px;"></i>
+            todorovnikola00@gmail.com</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Бързи връзки</h3>
+          <a href="index.html">Начало</a>
+          <a href="prices.html">Цени</a>
+          <a href="laptops.html">Лаптопи</a>
+          <a href="#services">Услуги</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Работно време</h3>
+          <p>Понеделник - Петък: 09:00 - 19:00</p>
+          <p>Събота: 10:00 - 16:00</p>
+          <p>Неделя: Почивен ден</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        &copy; 2024 Бит & Байт. Всички права запазени.
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>

@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
   <title>Ценоразпис – Компютърен сервиз в София | Бит & Байт</title>
-  <meta name="description" content="Ценоразпис на компютърен сервиз Бит & Байт в София, район Дианабад. Почистване, профилактика и смяна на термопаста за лаптопи и компютри.">
-
+  <meta name="description" content="Ценоразпис на компютърен сервиз Бит & Байт в София, район Дианабад.">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- SIDE MENU -->
-<div class="side-menu">
-  <div class="menu-handle">☰</div>
-  <div class="menu-content">
-    <a href="index.html">🏠 Начало</a>
-    <a href="prices.html" class="active">💰 Ценоразпис</a>
-    <a href="laptops.html">💻 Лаптопи</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<header class="hero small">
-  <div class="hero-content">
-
-    <!-- LANGUAGE SWITCH -->
-    <div class="lang-switch">
-      <a href="prices-en.html">EN</a>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Бит & Байт">
+        <span>Бит & Байт</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Начало</a>
+        <a href="index.html#services" class="nav-link">Услуги</a>
+        <a href="laptops.html" class="nav-link">Лаптопи</a>
+        <a href="prices.html" class="nav-link active">Цени</a>
+        <a href="index.html#about" class="nav-link">За Нас</a>
+        <a href="index.html#contact" class="nav-link">Контакти</a>
+      </nav>
+      <a href="prices-en.html" class="nav-link"
+        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">EN</a>
     </div>
+  </header>
 
-    <!-- H1 -->
-    <h1>Ценоразпис на компютърен сервиз в София</h1>
-    <p>Основни услуги – район Дианабад</p>
+  <!-- HERO SMALL -->
+  <section class="hero hero-small">
+    <div class="container hero-content">
+      <h1>Ценоразпис</h1>
+      <p>Основни услуги и ремонти</p>
+    </div>
+  </section>
 
-  </div>
-</header>
+  <!-- PRICES GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
 
-<!-- SERVICES -->
-<section class="products">
-  <div class="product-card">
-    <h3>Почистване и профилактика</h3>
-    <p class="price">от 30 лв.</p>
-  </div>
+        <div class="feature-card" style="text-align: center;">
+          <h3 style="margin-bottom: 20px;">Почистване и профилактика</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 30 лв.</p>
+        </div>
 
-  <div class="product-card">
-    <h3>Смяна на термопаста</h3>
-    <p class="price">от 25 лв.</p>
-  </div>
+        <div class="feature-card" style="text-align: center;">
+          <h3 style="margin-bottom: 20px;">Смяна на термопаста</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 25 лв.</p>
+        </div>
 
-  <div class="product-card">
-    <h3>Почистване + смяна на термопаста</h3>
-    <p class="price">от 40 лв.</p>
-  </div>
+        <div class="feature-card" style="text-align: center;">
+          <h3 style="margin-bottom: 20px;">Почистване + термопаста</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 40 лв.</p>
+        </div>
 
-  <div class="product-card">
-    <h3>Разглобяване / сглобяване</h3>
-    <p class="price">от 20 лв.</p>
-  </div>
-</section>
+        <div class="feature-card" style="text-align: center;">
+          <h3 style="margin-bottom: 20px;">Разглобяване / сглобяване</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 20 лв.</p>
+        </div>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Контакти</h2>
-  <div class="contact-buttons">
-    <a href="tel:0884870152" class="btn phone">📞 0884 870 152</a>
-    <a href="mailto:todorovnikola00@gmail.com" class="btn email">✉️ Имейл</a>
-    <a href="https://www.google.com/maps/place/ж.к.+Дианабад" class="btn map">
-      📍 София – Дианабад
-    </a>
-  </div>
-</section>
+      </div>
 
-<a href="tel:0884870152" class="call-button">📞</a>
+      <div style="margin-top: 50px; text-align: center;">
+        <h3>Имате специфичен проблем?</h3>
+        <p style="margin-bottom: 20px; color: #ccc;">Свържете се с нас за безплатна консултация и диагностика.</p>
+        <a href="index.html#contact" class="btn">Контакти</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2024 Бит & Байт. Всички права запазени.
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>

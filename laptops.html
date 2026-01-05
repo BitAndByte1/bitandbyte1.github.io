@@ -1,67 +1,98 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO -->
   <title>Лаптопи – Компютърен сервиз в София | Бит & Байт</title>
-  <meta name="description" content="Примерни и налични лаптопи от компютърен сервиз Бит & Байт в София. Поддръжка, профилактика и обслужване на лаптопи.">
-
+  <meta name="description"
+    content="Примерни и налични лаптопи от компютърен сервиз Бит & Байт в София. Поддръжка, профилактика и обслужване на лаптопи.">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- SIDE MENU -->
-<div class="side-menu">
-  <div class="menu-handle">☰</div>
-  <div class="menu-content">
-    <a href="index.html">🏠 Начало</a>
-    <a href="prices.html">💰 Ценоразпис</a>
-    <a href="laptops.html" class="active">💻 Лаптопи</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<header class="hero small">
-  <div class="hero-content">
-
-    <!-- LANGUAGE SWITCH -->
-    <div class="lang-switch">
-      <a href="laptops-en.html">EN</a>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Бит & Байт">
+        <span>Бит & Байт</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Начало</a>
+        <a href="index.html#services" class="nav-link">Услуги</a>
+        <a href="laptops.html" class="nav-link active">Лаптопи</a>
+        <a href="prices.html" class="nav-link">Цени</a>
+        <a href="index.html#about" class="nav-link">За Нас</a>
+        <a href="index.html#contact" class="nav-link">Контакти</a>
+      </nav>
+      <a href="laptops-en.html" class="nav-link"
+        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">EN</a>
     </div>
+  </header>
 
-    <!-- H1 -->
-    <h1>Лаптопи – сервиз и поддръжка в София</h1>
-    <p>Налични / примерни модели</p>
+  <!-- HERO SMALL -->
+  <section class="hero hero-small">
+    <div class="container hero-content">
+      <h1>Лаптопи – сервиз и поддръжка</h1>
+      <p>Налични / примерни модели</p>
+    </div>
+  </section>
 
-  </div>
-</header>
+  <!-- PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
 
-<!-- PRODUCTS -->
-<section class="products">
-  <div class="product-card">
-    <img src="images/laptop1.jpg" alt="Dell Latitude 5490 лаптоп">
-    <h3>Dell Latitude 5490</h3>
-    <p class="price">850 лв.</p>
-  </div>
+        <div class="service-card">
+          <div class="service-img" style="height: 220px;">
+            <img src="images/laptop1.jpg" alt="Dell Latitude 5490">
+          </div>
+          <div class="service-info">
+            <h3>Dell Latitude 5490</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">850 лв.</p>
+            <p style="font-size: 14px;">Надежден бизнес лаптоп.</p>
+          </div>
+        </div>
 
-  <div class="product-card">
-    <img src="images/laptop2.jpg" alt="HP ProBook 450 лаптоп">
-    <h3>HP ProBook 450</h3>
-    <p class="price">780 лв.</p>
-  </div>
+        <div class="service-card">
+          <div class="service-img" style="height: 220px;">
+            <img src="images/laptop2.jpg" alt="HP ProBook 450">
+          </div>
+          <div class="service-info">
+            <h3>HP ProBook 450</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">780 лв.</p>
+            <p style="font-size: 14px;">Идеален за работа и учене.</p>
+          </div>
+        </div>
 
-  <div class="product-card">
-    <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480 лаптоп">
-    <h3>Lenovo ThinkPad T480</h3>
-    <p class="price">920 лв.</p>
-  </div>
-</section>
+        <div class="service-card">
+          <div class="service-img" style="height: 220px;">
+            <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480">
+          </div>
+          <div class="service-info">
+            <h3>Lenovo ThinkPad T480</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">920 лв.</p>
+            <p style="font-size: 14px;">Легендарна здравина и производителност.</p>
+          </div>
+        </div>
 
-<a href="tel:0884870152" class="call-button">📞</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2024 Бит & Байт. Всички права запазени.
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
