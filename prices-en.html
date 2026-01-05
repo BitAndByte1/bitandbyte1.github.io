@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Prices – Computer Repair Service in Sofia | Bit & Byte</title>
-  <meta name="description" content="Prices for computer and laptop repair services in Sofia. Cleaning, maintenance and thermal paste replacement.">
+  <meta name="description"
+    content="Prices for computer and laptop repair services in Sofia. Cleaning, maintenance and thermal paste replacement.">
 
   <link rel="alternate" hreflang="en" href="prices-en.html">
   <link rel="alternate" hreflang="bg" href="prices.html">
@@ -16,68 +18,69 @@
 
 <body>
 
-<!-- SIDE MENU (NO LANGUAGE HERE) -->
-<div class="side-menu">
-  <div class="menu-handle">☰</div>
-  <div class="menu-content">
-    <a href="index-en.html">🏠 Home</a>
-    <a href="prices-en.html" class="active">💰 Prices</a>
-    <a href="laptops-en.html">💻 Laptops</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<header class="hero">
-
-  <!-- LANGUAGE BUTTON (ONLY ONE) -->
-  <a href="prices.html" class="lang-btn">BG</a>
-
-  <div class="hero-content">
-    <h1>Service Prices</h1>
-    <p class="hero-text">Main computer repair services</p>
-  </div>
-</header>
-
-<!-- PRICES -->
-<section class="products">
-  <div class="product-card">
-    <h3>Cleaning & maintenance</h3>
-    <p class="price">from 30 BGN</p>
+  <!-- SIDE MENU (NO LANGUAGE HERE) -->
+  <div class="side-menu">
+    <div class="menu-handle">☰</div>
+    <div class="menu-content">
+      <a href="index-en.html">🏠 Home</a>
+      <a href="prices-en.html" class="active">💰 Prices</a>
+      <a href="laptops-en.html">💻 Laptops</a>
+    </div>
   </div>
 
-  <div class="product-card">
-    <h3>Thermal paste replacement</h3>
-    <p class="price">from 25 BGN</p>
-  </div>
+  <!-- HERO -->
+  <header class="hero">
 
-  <div class="product-card">
-    <h3>Cleaning + thermal paste</h3>
-    <p class="price">from 40 BGN</p>
-  </div>
+    <!-- LANGUAGE BUTTON (ONLY ONE) -->
+    <a href="prices.html" class="lang-btn">BG</a>
 
-  <div class="product-card">
-    <h3>Disassembly / assembly</h3>
-    <p class="price">from 20 BGN</p>
-  </div>
-</section>
+    <div class="hero-content">
+      <h1>Service Prices</h1>
+      <p class="hero-text">Main computer repair services</p>
+    </div>
+  </header>
 
-<a href="tel:+359884870152" class="call-button">📞</a>
+  <!-- PRICES -->
+  <section class="products">
+    <div class="product-card">
+      <h3>Cleaning & maintenance</h3>
+      <p class="price">from 15 €</p>
+    </div>
 
-<script>
-const menu = document.querySelector('.side-menu');
-const handle = document.querySelector('.menu-handle');
+    <div class="product-card">
+      <h3>Thermal paste replacement</h3>
+      <p class="price">from 12 €</p>
+    </div>
 
-handle.addEventListener('click', e => {
-  e.stopPropagation();
-  menu.classList.toggle('open');
-});
+    <div class="product-card">
+      <h3>Cleaning + thermal paste</h3>
+      <p class="price">from 20 €</p>
+    </div>
 
-document.addEventListener('click', e => {
-  if (!menu.contains(e.target)) {
-    menu.classList.remove('open');
-  }
-});
-</script>
+    <div class="product-card">
+      <h3>Disassembly / assembly</h3>
+      <p class="price">from 10 €</p>
+    </div>
+  </section>
+
+  <a href="tel:+359884870152" class="call-button">📞</a>
+
+  <script>
+    const menu = document.querySelector('.side-menu');
+    const handle = document.querySelector('.menu-handle');
+
+    handle.addEventListener('click', e => {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', e => {
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
+
 </html>
