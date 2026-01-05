@@ -50,13 +50,17 @@ addLaptopForm.addEventListener('submit', async (e) => {
         console.log("Start upload image:", imageFile.name);
 
         let imageUrl;
+        // TEMPORARY DEBUGGING: Allow proceeding even if image upload fails
         try {
+            statusMsg.textContent = 'Качване на снимка...';
             imageUrl = await uploadImage(imageFile);
             console.log("Image uploaded, URL:", imageUrl);
-            statusMsg.textContent = 'Снимката е качена! Записване в базата...';
         } catch (imgErr) {
-            console.error("Upload failed details:", imgErr);
-            throw new Error("Грешка при качване на снимка: " + imgErr.message + " (Проверете дали Storage е активиран в Firebase конзолата!)");
+            console.error("Upload failed, using placeholder:", imgErr);
+            statusMsg.textContent = 'Снимката не успя, но продължаваме...';
+            // Use a placeholder image so testing can continue
+            imageUrl = "https://via.placeholder.com/300x200?text=No+Image";
+            alert("ГРЕШКА ПРИ СНИМКА: " + imgErr.message + "\n\nЩе запишем лаптопа без снимка, за да тестваме базата данни.");
         }
 
         try {
