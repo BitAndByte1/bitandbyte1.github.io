@@ -7,7 +7,18 @@ const COLLECTION_NAME = "laptops";
 // Upload Image
 export async function uploadImage(file) {
     const storageRef = ref(storage, 'laptops/' + Date.now() + '-' + file.name);
-    await uploadBytes(storageRef, file);
+
+    // Create a timeout promise
+    const timeout = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error("Timeout: Сървърът не отговаря. Проверете интернет връзката или защитната стена.")), 15000);
+    });
+
+    // Race between upload and timeout
+    await Promise.race([
+        uploadBytes(storageRef, file),
+        timeout
+    ]);
+
     return await getDownloadURL(storageRef);
 }
 
