@@ -29,8 +29,14 @@ logoutBtn.addEventListener('click', async (e) => {
 addLaptopForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = addLaptopForm.querySelector('button');
+    const statusMsg = document.getElementById('statusMessage');
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Качва се...';
+
+    statusMsg.style.display = 'block';
+    statusMsg.style.color = '#fff';
+    statusMsg.textContent = 'Започване на процес...';
 
     try {
         const model = document.getElementById('model').value;
@@ -40,15 +46,37 @@ addLaptopForm.addEventListener('submit', async (e) => {
 
         if (!imageFile) throw new Error("Моля изберете снимка!");
 
-        const imageUrl = await uploadImage(imageFile);
-        await addLaptop(model, price, description, imageUrl);
+        statusMsg.textContent = 'Качване на снимка... (Моля изчакайте)';
+        console.log("Start upload image:", imageFile.name);
+
+        let imageUrl;
+        try {
+            imageUrl = await uploadImage(imageFile);
+            console.log("Image uploaded, URL:", imageUrl);
+            statusMsg.textContent = 'Снимката е качена! Записване в базата...';
+        } catch (imgErr) {
+            console.error("Upload failed details:", imgErr);
+            throw new Error("Грешка при качване на снимка: " + imgErr.message + " (Проверете дали Storage е активиран в Firebase конзолата!)");
+        }
+
+        try {
+            await addLaptop(model, price, description, imageUrl);
+            console.log("Database entry added");
+            statusMsg.textContent = 'Успешно записано!';
+        } catch (dbErr) {
+            console.error("DB failed details:", dbErr);
+            throw new Error("Грешка при запис в базата: " + dbErr.message);
+        }
 
         addLaptopForm.reset();
         alert("Лаптопът е добавен успешно!");
+        statusMsg.style.display = 'none';
         loadProducts(); // Refresh list
     } catch (error) {
-        alert("Грешка: " + error.message);
+        statusMsg.style.color = 'red';
+        statusMsg.textContent = error.message;
         console.error(error);
+        alert("Грешка: " + error.message);
     } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Добави Лаптоп';
