@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Laptops – Computer Repair Service in Sofia | Bit & Byte</title>
-  <meta name="description" content="Available and example laptops serviced by Bit & Byte computer repair service in Sofia.">
+  <meta name="description"
+    content="Available and example laptops serviced by Bit & Byte computer repair service in Sofia.">
 
   <link rel="alternate" hreflang="en" href="laptops-en.html">
   <link rel="alternate" hreflang="bg" href="laptops.html">
@@ -14,68 +16,71 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
+
 <body>
 
-<!-- SIDE MENU (NO LANGUAGE HERE) -->
-<div class="side-menu">
-  <div class="menu-handle">☰</div>
-  <div class="menu-content">
-    <a href="index-en.html">🏠 Home</a>
-    <a href="prices-en.html">💰 Prices</a>
-    <a href="laptops-en.html" class="active">💻 Laptops</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<header class="hero">
-
-  <!-- LANGUAGE BUTTON (ONLY ONE) -->
-  <a href="laptops.html" class="lang-btn">BG</a>
-
-  <div class="hero-content">
-    <h1>Laptops</h1>
-    <p class="hero-text">Available / example models</p>
-  </div>
-</header>
-
-<!-- PRODUCTS -->
-<section class="products">
-  <div class="product-card">
-    <img src="images/laptop1.jpg" alt="Dell Latitude 5490 laptop">
-    <h3>Dell Latitude 5490</h3>
-    <p class="price">850 BGN</p>
+  <!-- SIDE MENU (NO LANGUAGE HERE) -->
+  <div class="side-menu">
+    <div class="menu-handle">☰</div>
+    <div class="menu-content">
+      <a href="index-en.html">🏠 Home</a>
+      <a href="prices-en.html">💰 Prices</a>
+      <a href="laptops-en.html" class="active">💻 Laptops</a>
+    </div>
   </div>
 
-  <div class="product-card">
-    <img src="images/laptop2.jpg" alt="HP ProBook 450 laptop">
-    <h3>HP ProBook 450</h3>
-    <p class="price">780 BGN</p>
-  </div>
+  <!-- HERO -->
+  <header class="hero">
 
-  <div class="product-card">
-    <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480 laptop">
-    <h3>Lenovo ThinkPad T480</h3>
-    <p class="price">920 BGN</p>
-  </div>
-</section>
+    <!-- LANGUAGE BUTTON (ONLY ONE) -->
+    <a href="laptops.html" class="lang-btn">BG</a>
 
-<a href="tel:+359884870152" class="call-button">📞</a>
+    <div class="hero-content">
+      <h1>Laptops</h1>
+      <p class="hero-text">Available / example models</p>
+    </div>
+  </header>
 
-<script>
-const menu = document.querySelector('.side-menu');
-const handle = document.querySelector('.menu-handle');
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="product-card">
+      <img src="images/laptop1.jpg" alt="Dell Latitude 5490 laptop">
+      <h3>Dell Latitude 5490</h3>
+      <p class="price">850 BGN</p>
+    </div>
 
-handle.addEventListener('click', e => {
-  e.stopPropagation();
-  menu.classList.toggle('open');
-});
+    <div class="product-card">
+      <img src="images/laptop2.jpg" alt="HP ProBook 450 laptop">
+      <h3>HP ProBook 450</h3>
+      <p class="price">780 BGN</p>
+    </div>
 
-document.addEventListener('click', e => {
-  if (!menu.contains(e.target)) {
-    menu.classList.remove('open');
-  }
-});
-</script>
+    <div class="product-card">
+      <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480 laptop">
+      <h3>Lenovo ThinkPad T480</h3>
+      <p class="price">920 BGN</p>
+    </div>
+  </section>
+
+  <a href="tel:+359884870152" class="call-button">📞</a>
+
+  <script>
+    const menu = document.querySelector('.side-menu');
+    const handle = document.querySelector('.menu-handle');
+
+    handle.addEventListener('click', e => {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', e => {
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
+
 </html>
