@@ -4,82 +4,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Laptops – Computer Repair Service in Sofia | Bit & Byte</title>
   <meta name="description"
     content="Available and example laptops serviced by Bit & Byte computer repair service in Sofia.">
-
-  <link rel="alternate" hreflang="en" href="laptops-en.html">
-  <link rel="alternate" hreflang="bg" href="laptops.html">
-
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
-
 
 <body>
 
-  <!-- SIDE MENU (NO LANGUAGE HERE) -->
-  <div class="side-menu">
-    <div class="menu-handle">☰</div>
-    <div class="menu-content">
-      <a href="index-en.html">🏠 Home</a>
-      <a href="prices-en.html">💰 Prices</a>
-      <a href="laptops-en.html" class="active">💻 Laptops</a>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero">
-
-    <!-- LANGUAGE BUTTON (ONLY ONE) -->
-    <a href="laptops.html" class="lang-btn">BG</a>
-
-    <div class="hero-content">
-      <h1>Laptops</h1>
-      <p class="hero-text">Available / example models</p>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index-en.html" class="logo">
+        <img src="images/logo.png" alt="Bit & Byte">
+        <span>Bit & Byte</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index-en.html" class="nav-link">Home</a>
+        <a href="index-en.html#services" class="nav-link">Services</a>
+        <a href="laptops-en.html" class="nav-link active">Laptops</a>
+        <a href="prices-en.html" class="nav-link">Prices</a>
+        <a href="index-en.html#about" class="nav-link">About Us</a>
+        <a href="index-en.html#contact" class="nav-link">Contacts</a>
+      </nav>
+      <a href="laptops.html" class="nav-link"
+        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">BG</a>
     </div>
   </header>
 
-  <!-- PRODUCTS -->
-  <section class="products">
-    <div class="product-card">
-      <img src="images/laptop1.jpg" alt="Dell Latitude 5490 laptop">
-      <h3>Dell Latitude 5490</h3>
-      <p class="price">430 €</p>
-    </div>
-
-    <div class="product-card">
-      <img src="images/laptop2.jpg" alt="HP ProBook 450 laptop">
-      <h3>HP ProBook 450</h3>
-      <p class="price">400 €</p>
-    </div>
-
-    <div class="product-card">
-      <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480 laptop">
-      <h3>Lenovo ThinkPad T480</h3>
-      <p class="price">470 €</p>
+  <!-- HERO SMALL -->
+  <section class="hero hero-small">
+    <div class="container hero-content">
+      <h1>Laptops – Service and Support</h1>
+      <p>Available / Example Models</p>
     </div>
   </section>
 
-  <a href="tel:+359884870152" class="call-button">📞</a>
+  <!-- PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
 
-  <script>
-    const menu = document.querySelector('.side-menu');
-    const handle = document.querySelector('.menu-handle');
+        <div class="service-card">
+          <div class="service-img" style="height: 220px;">
+            <img src="images/laptop1.jpg" alt="Dell Latitude 5490">
+          </div>
+          <div class="service-info">
+            <h3>Dell Latitude 5490</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">430 €</p>
+            <p style="font-size: 14px;">Reliable business laptop.</p>
+          </div>
+        </div>
 
-    handle.addEventListener('click', e => {
-      e.stopPropagation();
-      menu.classList.toggle('open');
-    });
+        <div class="service-card">
+          <div class="service-img" style="height: 220px;">
+            <img src="images/laptop2.jpg" alt="HP ProBook 450">
+          </div>
+          <div class="service-info">
+            <h3>HP ProBook 450</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">400 €</p>
+            <p style="font-size: 14px;">Ideal for work and study.</p>
+          </div>
+        </div>
 
-    document.addEventListener('click', e => {
-      if (!menu.contains(e.target)) {
-        menu.classList.remove('open');
-      }
-    });
-  </script>
+        <div class="service-card">
+          <div class="service-img" style="height: 220px;">
+            <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480">
+          </div>
+          <div class="service-info">
+            <h3>Lenovo ThinkPad T480</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">470 €</p>
+            <p style="font-size: 14px;">Legendary durability and performance.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2026 Bit & Byte. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
 </body>
 
