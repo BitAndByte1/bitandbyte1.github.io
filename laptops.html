@@ -45,44 +45,50 @@
   <!-- PRODUCTS -->
   <section class="section">
     <div class="container">
-      <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div id="laptops-container" class="services-grid"
+        style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
 
-        <div class="service-card">
-          <div class="service-img" style="height: 220px;">
-            <img src="images/laptop1.jpg" alt="Dell Latitude 5490">
-          </div>
-          <div class="service-info">
-            <h3>Dell Latitude 5490</h3>
-            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">430 €</p>
-            <p style="font-size: 14px;">Надежден бизнес лаптоп.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-img" style="height: 220px;">
-            <img src="images/laptop2.jpg" alt="HP ProBook 450">
-          </div>
-          <div class="service-info">
-            <h3>HP ProBook 450</h3>
-            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">400 €</p>
-            <p style="font-size: 14px;">Идеален за работа и учене.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-img" style="height: 220px;">
-            <img src="images/laptop3.jpg" alt="Lenovo ThinkPad T480">
-          </div>
-          <div class="service-info">
-            <h3>Lenovo ThinkPad T480</h3>
-            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">470 €</p>
-            <p style="font-size: 14px;">Легендарна здравина и производителност.</p>
-          </div>
-        </div>
+        <!-- Products will be loaded here dynamically -->
+        <p style="grid-column: 1/-1; text-align: center;">Зареждане на продукти...</p>
 
       </div>
     </div>
   </section>
+
+  <!-- FIREBASE SCRIPTS -->
+  <script type="module">
+    import { getLaptops } from './js/db.js';
+
+    const container = document.getElementById('laptops-container');
+
+    async function displayLaptops() {
+      const laptops = await getLaptops();
+      container.innerHTML = '';
+
+      if (laptops.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Все още няма добавени лаптопи.</p>';
+        return;
+      }
+
+      laptops.forEach(laptop => {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.innerHTML = `
+          <div class="service-img" style="height: 220px;">
+            <img src="${laptop.imageUrl}" alt="${laptop.model}" style="width:100%; height:100%; object-fit:contain;">
+          </div>
+          <div class="service-info">
+            <h3>${laptop.model}</h3>
+            <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">${laptop.price} €</p>
+            <p style="font-size: 14px;">${laptop.description}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    displayLaptops();
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ Панел - Бит & Байт</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            background: #2a2a2a;
+            color: #fff;
+        }
+
+        .product-list {
+            margin-top: 30px;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #222;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .product-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Бит & Байт">
+                <span>Админ Панел</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Към Сайта</a>
+                <a href="#" id="logoutBtn" class="nav-link hidden">Изход</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- LOGIN SECTION -->
+        <div id="loginSection" class="admin-container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Вход</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Имейл</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Парола</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Влез</button>
+            </form>
+        </div>
+
+        <!-- DASHBOARD SECTION -->
+        <div id="dashboardSection" class="hidden">
+
+            <div class="admin-container">
+                <h2>Добави Нов Лаптоп</h2>
+                <form id="addLaptopForm">
+                    <div class="form-group">
+                        <label>Марка / Модел</label>
+                        <input type="text" id="model" placeholder="напр. Dell Latitude 5490" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Цена (€)</label>
+                        <input type="number" id="price" placeholder="430" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Описание</label>
+                        <textarea id="description" rows="3" placeholder="Кратко описание..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Снимка</label>
+                        <input type="file" id="imageFile" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn">Добави Лаптоп</button>
+                </form>
+            </div>
+
+            <div class="container" style="margin-bottom: 50px;">
+                <h2>Налични Лаптопи</h2>
+                <div id="adminProductList" class="product-list">
+                    <!-- Products will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/admin.js"></script>
+
+</body>
+
+</html>
