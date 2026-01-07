@@ -42,12 +42,13 @@ addLaptopForm.addEventListener('submit', async (e) => {
         const model = document.getElementById('model').value;
         const price = document.getElementById('price').value;
         const description = document.getElementById('description').value;
+        const specs = document.getElementById('specs').value;
         const imageFile = document.getElementById('imageFile').files[0];
 
         if (!imageFile) throw new Error("Моля изберете снимка!");
 
         // addLaptop now handles the image compression internally
-        await addLaptop(model, price, description, imageFile);
+        await addLaptop(model, price, description, specs, imageFile);
 
         statusMsg.style.color = 'green';
         statusMsg.textContent = 'Успешно записано!';

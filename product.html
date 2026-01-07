@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детайли за лаптоп - Бит & Байт</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .product-details-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: #222;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .product-details-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: zoom-in;
+        }
+
+        .product-image-section img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .product-info-section h1 {
+            color: #4da3ff;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .specs-box {
+            background: #333;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .specs-box h3 {
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .specs-content {
+            white-space: pre-wrap;
+            /* Preserve line breaks */
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Бит & Байт">
+                <span>Бит & Байт</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="laptops.html" class="nav-link"><i class="fas fa-arrow-left"></i> Назад към Лаптопи</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="loading" style="text-align: center; margin-top: 100px;">
+            <h2>Зареждане на продукт...</h2>
+        </div>
+
+        <div id="product-content" class="product-details-container" style="display: none;">
+            <!-- Left: Image -->
+            <div class="product-image-section" onclick="openLightbox()">
+                <img id="p-image" src="" alt="Laptop Image">
+            </div>
+
+            <!-- Right: Info -->
+            <div class="product-info-section">
+                <h1 id="p-model">Model Name</h1>
+                <div class="product-price"><span id="p-price">0</span> €</div>
+
+                <p id="p-description" style="font-size: 18px; margin-bottom: 20px;">Short description goes here.</p>
+
+                <div class="specs-box">
+                    <h3><i class="fas fa-list"></i> Спецификации</h3>
+                    <div id="p-specs" class="specs-content">
+                        <!-- Specs will be injected here -->
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="index.html#contact" class="btn">Заяви Интерес</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module">
+        import { getLaptopById } from './js/db.js?v=4';
+
+        // Get ID from URL
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+
+        const loadingDiv = document.getElementById('loading');
+        const contentDiv = document.getElementById('product-content');
+
+        async function init() {
+            if (!productId) {
+                loadingDiv.innerHTML = "<h2>Грешка: Невалиден продукт.</h2>";
+                return;
+            }
+
+            const laptop = await getLaptopById(productId);
+
+            if (!laptop) {
+                loadingDiv.innerHTML = "<h2>Продуктът не е намерен.</h2>";
+                return;
+            }
+
+            // Populate Data
+            document.title = laptop.model + " - Бит & Байт";
+            document.getElementById('p-model').textContent = laptop.model;
+            document.getElementById('p-price').textContent = laptop.price;
+            document.getElementById('p-description').textContent = laptop.description;
+            // Handle specs (fallback text if empty)
+            document.getElementById('p-specs').textContent = laptop.specs || "Няма въведени специфични данни.";
+
+            const imgEl = document.getElementById('p-image');
+            imgEl.src = laptop.imageUrl;
+            document.getElementById('lightbox-img').src = laptop.imageUrl;
+
+            loadingDiv.style.display = 'none';
+            contentDiv.style.display = 'grid'; // or flex, matches css
+        }
+
+        // Expose lightbox functions to window
+        window.openLightbox = () => {
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        window.closeLightbox = () => {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
