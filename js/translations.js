@@ -37,10 +37,56 @@ export const translations = {
         },
         services: {
             title: "Нашите Услуги",
-            cleaning: { title: "Почистване и Профилактика", text: "Пълно разглобяване и почистване на охладителната система." },
-            diag: { title: "Диагностика", text: "Бързо и точно установяване на хардуерни и софтуерни проблеми." },
-            data: { title: "Възстановяване на данни", text: "Спасяване на информация от повредени дискове и носители." },
-            net: { title: "Мрежи и Интернет", text: "Настройка на рутери, локални мрежи и оптимизация." },
+            cleaning: {
+                title: "Почистване и Профилактика",
+                text: "Пълно разглобяване и почистване на охладителната система.",
+                details: "Редовното почистване е критично за здравето на вашия лаптоп. С времето прахът запушва радиаторите, което води до прегряване, шум и забавяне на работата. Нашата услуга връща фабричните температури на машината.",
+                includes: [
+                    "Пълно разглобяване на лаптопа/компютъра",
+                    "Почистване на вентилаторите и радиаторите с компресиран въздух",
+                    "Премахване на старите термопасти и термопадове",
+                    "Нанасяне на висок клас термопаста (Arctic MX-4/MX-6)",
+                    "Смазване на вентилаторите (ако е възможно)",
+                    "Външно почистване на корпуса и клавиатурата"
+                ],
+                process: "1. Първоначален тест на температурите -> 2. Разглобяване и почистване -> 3. Смяна на паста -> 4. Сглобяване и стрес тест за стабилност."
+            },
+            diag: {
+                title: "Диагностика",
+                text: "Бързо и точно установяване на хардуерни и софтуерни проблеми.",
+                details: "Ако компютърът не пали, забива, издава странни звуци или работи бавно, ние ще открием причината. Диагностиката е безплатна, ако извършите ремонта при нас.",
+                includes: [
+                    "Пълен хардуерен тест (RAM, HDD/SSD, Video)",
+                    "Проверка на дънна платка и захранване",
+                    "Софтуерен анализ за вируси и грешки",
+                    "Консултация за възможности за ъпгрейд"
+                ],
+                process: "1. Приемане на устройството -> 2. Тестване със специализиран софтуер и хардуер -> 3. Уведомяване на клиента за проблема и цената -> 4. Ремонт след одобрение."
+            },
+            data: {
+                title: "Възстановяване на данни",
+                text: "Спасяване на информация от повредени дискове и носители.",
+                details: "Изтрихте важни файлове? Дискът ви спря да работи? Ние използваме професионални методи за извличане на информация от повредени носители.",
+                includes: [
+                    "Възстановяване на изтрити файлове",
+                    "Извличане на данни от повредени HDD/SSD",
+                    "Копиране на информация от стари носители",
+                    "Създаване на резервни копия (Backup)"
+                ],
+                process: "1. Диагностика на носителя -> 2. Определяне на шансовете за успех -> 3. Извличане на данни (ако е възможно) -> 4. Прехвърляне на здрав носител."
+            },
+            net: {
+                title: "Мрежи и Интернет",
+                text: "Настройка на рутери, локални мрежи и оптимизация.",
+                details: "Бавен Wi-Fi? Проблеми с покритието? Ние ще оптимизираме домашната или офисната ви мрежа за максимална скорост и стабилност.",
+                includes: [
+                    "Настройка на рутери и Access Points",
+                    "Изграждане на LAN мрежи (окабеляване)",
+                    "Оптимизация на Wi-Fi покритието",
+                    "Мрежова сигурност и защита"
+                ],
+                process: "1. Оглед на помещението -> 2. Проектиране на мрежата -> 3. Инсталиране и настройка -> 4. Тестване на скоростта и покритието."
+            },
             prices_btn: "Виж ценоразпис"
         },
         footer: {
@@ -115,10 +161,56 @@ export const translations = {
         },
         services: {
             title: "Our Services",
-            cleaning: { title: "Cleaning and Maintenance", text: "Complete disassembly and maintenance of the cooling system." },
-            diag: { title: "Diagnostics", text: "Fast and accurate identification of hardware and software problems." },
-            data: { title: "Data Recovery", text: "Saving information from damaged disks and media." },
-            net: { title: "Networks and Internet", text: "Router setup, local networks and optimization." },
+            cleaning: {
+                title: "Cleaning and Maintenance",
+                text: "Complete disassembly and maintenance of the cooling system.",
+                details: "Regular cleaning is critical for your laptop's health. Over time, dust clogs the radiators, leading to overheating, noise, and performance drops. Our service restores the machine's factory temperatures.",
+                includes: [
+                    "Complete laptop/computer disassembly",
+                    "Cleaning fans and radiators with compressed air",
+                    "Removal of old thermal paste and pads",
+                    "Application of high-end thermal paste (Arctic MX-4/MX-6)",
+                    "Fan lubrication (if possible)",
+                    "External cleaning of the body and keyboard"
+                ],
+                process: "1. Initial temp test -> 2. Disassembly & cleaning -> 3. Paste replacement -> 4. Reassembly & stress test."
+            },
+            diag: {
+                title: "Diagnostics",
+                text: "Fast and accurate identification of hardware and software problems.",
+                details: "If your computer won't turn on, freezes, makes strange noises, or runs slow, we'll find the cause. Diagnostics are free if you proceed with the repair.",
+                includes: [
+                    "Full hardware test (RAM, HDD/SSD, Video)",
+                    "Motherboard and PSU check",
+                    "Software analysis for viruses and errors",
+                    "Upgrade consultation"
+                ],
+                process: "1. Device reception -> 2. Testing with specialized tools -> 3. Client notification of issue & cost -> 4. Repair upon approval."
+            },
+            data: {
+                title: "Data Recovery",
+                text: "Saving information from damaged disks and media.",
+                details: "Deleted important files? Drive stopped working? We use professional methods to recover data from damaged media.",
+                includes: [
+                    "Recovery of deleted files",
+                    "Data extraction from damaged HDD/SSD",
+                    "Copying info from old media",
+                    "Creating backups"
+                ],
+                process: "1. Media diagnostics -> 2. Success chance assessment -> 3. Data extraction (if possible) -> 4. Transfer to healthy media."
+            },
+            net: {
+                title: "Networks and Internet",
+                text: "Router setup, local networks and optimization.",
+                details: "Slow Wi-Fi? Coverage issues? We'll optimize your home or office network for maximum speed and stability.",
+                includes: [
+                    "Router and Access Point setup",
+                    "LAN network building (cabling)",
+                    "Wi-Fi coverage optimization",
+                    "Network security"
+                ],
+                process: "1. Site survey -> 2. Network design -> 3. Installation & setup -> 4. Speed & coverage testing."
+            },
             prices_btn: "View Price List"
         },
         footer: {
