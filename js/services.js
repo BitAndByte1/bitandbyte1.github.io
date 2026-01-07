@@ -2,7 +2,9 @@ import { translations } from './translations.js';
 import { getLang } from './lang.js';
 
 export function initServices() {
+    console.log("Services module initialized");
     const serviceCards = document.querySelectorAll('.service-card');
+    console.log("Found service cards:", serviceCards.length);
     const modal = document.getElementById('service-modal');
     const closeModalBtn = modal.querySelector('.close-modal');
 
