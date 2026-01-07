@@ -1,5 +1,5 @@
 import { monitorAuth, login, logout } from './auth.js';
-import { addLaptop, getLaptops, deleteLaptop } from './database.js';
+import { addLaptop, getLaptops, deleteLaptop } from './backend.js';
 
 const loginSection = document.getElementById('loginSection');
 const dashboardSection = document.getElementById('dashboardSection');
