@@ -126,9 +126,17 @@
         </div>
 
         <div id="product-content" class="product-details-container" style="display: none;">
-            <!-- Left: Image -->
-            <div class="product-image-section" onclick="openLightbox()">
-                <img id="p-image" src="" alt="Laptop Image">
+            <!-- Left: Image Gallery -->
+            <div class="product-image-section">
+                <div class="main-image-container" onclick="openLightbox()">
+                    <img id="p-image" src="" alt="Laptop Image"
+                        style="width:100%; object-fit:contain; max-height:400px; cursor:zoom-in;">
+                </div>
+                <!-- Thumbnails -->
+                <div id="p-gallery" class="gallery-thumbs"
+                    style="display:flex; gap:10px; margin-top:10px; overflow-x:auto;">
+                    <!-- Thumbs injected by JS -->
+                </div>
             </div>
 
             <!-- Right: Info -->
@@ -141,12 +149,15 @@
                 <div class="specs-box">
                     <h3><i class="fas fa-list"></i> <span data-i18n="products.specs">Спецификации</span></h3>
                     <div id="p-specs" class="specs-content">
-                        <!-- Specs will be injected here -->
+                        <!-- Table injected by JS -->
                     </div>
                 </div>
 
-                <div style="margin-top: 30px;">
+                <div style="margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap;">
                     <a href="index.html#contact" class="btn" data-i18n="products.interest">Заяви Интерес</a>
+                    <a href="#" id="p-external-link" target="_blank" class="btn btn-outline" style="display: none;">
+                        <i class="fas fa-external-link-alt"></i> Научи повече
+                    </a>
                 </div>
             </div>
         </div>
@@ -159,7 +170,7 @@
 
     <!-- SCRIPTS -->
     <script type="module">
-        import { getLaptopById } from './js/database.js';
+        import { getLaptopById } from './js/backend.js';
 
         // Get ID from URL
         const params = new URLSearchParams(window.location.search);
@@ -186,12 +197,78 @@
             document.getElementById('p-model').textContent = laptop.model;
             document.getElementById('p-price').textContent = laptop.price;
             document.getElementById('p-description').textContent = laptop.description;
-            // Handle specs (fallback text if empty)
-            document.getElementById('p-specs').textContent = laptop.specs || "Няма въведени специфични данни.";
 
-            const imgEl = document.getElementById('p-image');
-            imgEl.src = laptop.imageUrl;
-            document.getElementById('lightbox-img').src = laptop.imageUrl;
+            // Handle Images (Array vs Single string legacy support)
+            let images = [];
+            if (Array.isArray(laptop.images) && laptop.images.length > 0) {
+                images = laptop.images;
+            } else if (laptop.imageUrl) {
+                images = [laptop.imageUrl];
+            }
+
+            // Set Main Image
+            const mainImg = document.getElementById('p-image');
+            mainImg.src = images[0];
+            document.getElementById('lightbox-img').src = images[0];
+
+            // Render Gallery Thumbs
+            const galleryContainer = document.getElementById('p-gallery');
+            galleryContainer.innerHTML = '';
+
+            if (images.length > 1) {
+                images.forEach((imgSrc) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = imgSrc;
+                    thumb.style.width = '60px';
+                    thumb.style.height = '60px';
+                    thumb.style.objectFit = 'cover';
+                    thumb.style.cursor = 'pointer';
+                    thumb.style.borderRadius = '4px';
+                    thumb.style.border = '2px solid transparent';
+
+                    thumb.onclick = () => {
+                        mainImg.src = imgSrc; // Swap main image
+                        document.getElementById('lightbox-img').src = imgSrc;
+                    };
+                    galleryContainer.appendChild(thumb);
+                });
+            }
+
+            // Render Specs (Object vs String legacy support)
+            const specsContainer = document.getElementById('p-specs');
+            if (typeof laptop.specs === 'object' && laptop.specs !== null) {
+                // Render Table
+                let tableHtml = '<table class="specs-table" style="width:100%; border-collapse: collapse; color: #fff;">';
+                const labels = {
+                    cpu: "Процесор", ram: "RAM", storage: "Диск",
+                    display: "Екран", video: "Видео карта", os: "OS"
+                };
+
+                for (const [key, label] of Object.entries(labels)) {
+                    const value = laptop.specs[key] || '-';
+                    tableHtml += `
+                        <tr style="border-bottom: 1px solid #444;">
+                            <td style="padding: 8px; font-weight: bold; width: 40%;">${label}</td>
+                            <td style="padding: 8px; color: #ccc;">${value}</td>
+                        </tr>
+                     `;
+                }
+                tableHtml += '</table>';
+                specsContainer.innerHTML = tableHtml;
+            } else {
+                // Legacy text support
+                specsContainer.textContent = laptop.specs || "Няма въведени специфични данни.";
+                specsContainer.style.whiteSpace = "pre-line";
+            }
+
+            // Handle External Link
+            const linkBtn = document.getElementById('p-external-link');
+            if (laptop.externalLink && laptop.externalLink.trim() !== "") {
+                linkBtn.href = laptop.externalLink;
+                linkBtn.style.display = "inline-flex";
+            } else {
+                linkBtn.style.display = "none";
+            }
 
             loadingDiv.style.display = 'none';
             contentDiv.style.display = 'grid'; // or flex, matches css
