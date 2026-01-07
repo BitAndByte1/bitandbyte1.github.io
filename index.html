@@ -23,28 +23,33 @@
       </a>
 
       <nav class="nav-menu">
-        <a href="index.html" class="nav-link active">Начало</a>
-        <a href="#services" class="nav-link">Услуги</a>
-        <a href="laptops.html" class="nav-link">Лаптопи</a>
-        <a href="prices.html" class="nav-link">Цени</a>
-        <a href="#about" class="nav-link">За Нас</a>
-        <a href="#contact" class="nav-link">Контакти</a>
+        <a href="index.html" class="nav-link active" data-i18n="nav.home">Начало</a>
+        <a href="#services" class="nav-link" data-i18n="nav.services">Услуги</a>
+        <a href="laptops.html" class="nav-link" data-i18n="nav.laptops">Лаптопи</a>
+        <a href="prices.html" class="nav-link" data-i18n="nav.prices">Цени</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">За Нас</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Контакти</a>
       </nav>
 
-      <a href="index-en.html" class="nav-link"
-        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">EN</a>
+      <div class="lang-switcher" style="margin-left: 20px;">
+        <a href="#" class="lang-btn" data-lang="bg" style="margin-right:5px;">BG</a>
+        |
+        <a href="#" class="lang-btn" data-lang="en" style="margin-left:5px;">EN</a>
+      </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="container hero-content">
-      <h1>Вашият надежден сервиз за<br> <span class="text-accent">компютри и лаптопи</span> в София</h1>
-      <p>Бърза диагностика, качествен ремонт и професионално обслужване за вашата техника в район Дианабад.</p>
+      <h1 data-i18n="hero.title">Вашият надежден сервиз за<br> <span class="text-accent">компютри и лаптопи</span> в
+        София</h1>
+      <p data-i18n="hero.subtitle">Бърза диагностика, качествен ремонт и професионално обслужване за вашата техника в
+        район Дианабад.</p>
 
       <div class="hero-buttons">
-        <a href="#services" class="btn">Виж Услугите</a>
-        <a href="#contact" class="btn btn-outline">Свържи се с нас</a>
+        <a href="#services" class="btn" data-i18n="hero.btn_services">Виж Услугите</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero.btn_contact">Свържи се с нас</a>
       </div>
     </div>
   </section>
@@ -55,20 +60,23 @@
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-wrench"></i></div>
-          <h3>Ремонт на устройства</h3>
-          <p>Извършваме ремонти на всички видове лаптопи и настолни компютри, включително смяна на дисплеи, клавиатури и
+          <h3 data-i18n="features.repair.title">Ремонт на устройства</h3>
+          <p data-i18n="features.repair.text">Извършваме ремонти на всички видове лаптопи и настолни компютри,
+            включително смяна на дисплеи, клавиатури и
             други компоненти.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-microchip"></i></div>
-          <h3>Профилактика</h3>
-          <p>Почистване от прах, смяна на термопаста и оптимизация на охлаждането за по-добра работа и дълъг живот на
+          <h3 data-i18n="features.maintenance.title">Профилактика</h3>
+          <p data-i18n="features.maintenance.text">Почистване от прах, смяна на термопаста и оптимизация на охлаждането
+            за по-добра работа и дълъг живот на
             техниката.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-download"></i></div>
-          <h3>Софтуер</h3>
-          <p>Инсталиране и преинсталиране на операционни системи, драйвери и специализиран софтуер. Премахване на
+          <h3 data-i18n="features.software.title">Софтуер</h3>
+          <p data-i18n="features.software.text">Инсталиране и преинсталиране на операционни системи, драйвери и
+            специализиран софтуер. Премахване на
             вируси.</p>
         </div>
       </div>
@@ -80,12 +88,16 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <h2 class="section-title" style="text-align: left; margin: 0 0 20px;">Кои сме ние?</h2>
-          <p>"Бит & Байт" е вашият доверен партньор за всякакви компютърни проблеми. Ние сме екип от ентусиасти и
+          <h2 class="section-title" style="text-align: left; margin: 0 0 20px;" data-i18n="about.title">Кои сме ние?
+          </h2>
+          <p data-i18n="about.p1">"Бит & Байт" е вашият доверен партньор за всякакви компютърни проблеми. Ние сме екип
+            от ентусиасти и
             професионалисти, които вярват, че техниката трябва да работи за вас, а не против вас.</p>
-          <p>Разположени в сърцето на Дианабад, ние предлагаме бързи и надеждни решения както за частни клиенти, така и
+          <p data-i18n="about.p2">Разположени в сърцето на Дианабад, ние предлагаме бързи и надеждни решения както за
+            частни клиенти, така и
             за малкия бизнес.</p>
-          <a href="#contact" class="btn btn-outline" style="color: #000; border-color: #007bff; color: #007bff;">Научете
+          <a href="#contact" class="btn btn-outline" style="color: #000; border-color: #007bff; color: #007bff;"
+            data-i18n="about.btn">Научете
             повече</a>
         </div>
         <div class="about-image">
@@ -102,7 +114,7 @@
   <!-- SERVICES GRID -->
   <section class="section bg-darker" id="services">
     <div class="container">
-      <h2 class="section-title">Нашите Услуги</h2>
+      <h2 class="section-title" data-i18n="services.title">Нашите Услуги</h2>
       <div class="services-grid">
 
         <div class="service-card">
@@ -111,8 +123,9 @@
             <i class="fas fa-wind" style="font-size: 50px;"></i>
           </div>
           <div class="service-info">
-            <h3>Почистване и Профилактика</h3>
-            <p style="color: #888; font-size: 14px;">Пълно разглобяване и почистване на охладителната система.</p>
+            <h3 data-i18n="services.cleaning.title">Почистване и Профилактика</h3>
+            <p style="color: #888; font-size: 14px;" data-i18n="services.cleaning.text">Пълно разглобяване и почистване
+              на охладителната система.</p>
           </div>
         </div>
 
@@ -121,8 +134,9 @@
             <i class="fas fa-stethoscope" style="font-size: 50px;"></i>
           </div>
           <div class="service-info">
-            <h3>Диагностика</h3>
-            <p style="color: #888; font-size: 14px;">Бързо и точно установяване на хардуерни и софтуерни проблеми.</p>
+            <h3 data-i18n="services.diag.title">Диагностика</h3>
+            <p style="color: #888; font-size: 14px;" data-i18n="services.diag.text">Бързо и точно установяване на
+              хардуерни и софтуерни проблеми.</p>
           </div>
         </div>
 
@@ -131,8 +145,9 @@
             <i class="fas fa-database" style="font-size: 50px;"></i>
           </div>
           <div class="service-info">
-            <h3>Възстановяване на данни</h3>
-            <p style="color: #888; font-size: 14px;">Спасяване на информация от повредени дискове и носители.</p>
+            <h3 data-i18n="services.data.title">Възстановяване на данни</h3>
+            <p style="color: #888; font-size: 14px;" data-i18n="services.data.text">Спасяване на информация от повредени
+              дискове и носители.</p>
           </div>
         </div>
 
@@ -141,15 +156,16 @@
             <i class="fas fa-network-wired" style="font-size: 50px;"></i>
           </div>
           <div class="service-info">
-            <h3>Мрежи и Интернет</h3>
-            <p style="color: #888; font-size: 14px;">Настройка на рутери, локални мрежи и оптимизация.</p>
+            <h3 data-i18n="services.net.title">Мрежи и Интернет</h3>
+            <p style="color: #888; font-size: 14px;" data-i18n="services.net.text">Настройка на рутери, локални мрежи и
+              оптимизация.</p>
           </div>
         </div>
 
       </div>
 
       <div style="text-align: center; margin-top: 40px;">
-        <a href="prices.html" class="btn">Виж ценоразпис</a>
+        <a href="prices.html" class="btn" data-i18n="services.prices_btn">Виж ценоразпис</a>
       </div>
     </div>
   </section>
@@ -159,36 +175,38 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h3>Контакти</h3>
-          <p><i class="fas fa-map-marker-alt" style="width: 20px;"></i> ж.к. Дианабад, София</p>
+          <h3 data-i18n="footer.contacts">Контакти</h3>
+          <p><i class="fas fa-map-marker-alt" style="width: 20px;"></i> <span data-i18n="footer.address">ж.к. Дианабад,
+              София</span></p>
           <a href="tel:0884870152"><i class="fas fa-phone" style="width: 20px;"></i> 0884 870 152</a>
           <a href="mailto:todorovnikola00@gmail.com"><i class="fas fa-envelope" style="width: 20px;"></i>
             todorovnikola00@gmail.com</a>
         </div>
 
         <div class="footer-col">
-          <h3>Бързи връзки</h3>
-          <a href="index.html">Начало</a>
-          <a href="prices.html">Цени</a>
-          <a href="laptops.html">Лаптопи</a>
-          <a href="#services">Услуги</a>
+          <h3 data-i18n="footer.links">Бързи връзки</h3>
+          <a href="index.html" data-i18n="nav.home">Начало</a>
+          <a href="prices.html" data-i18n="nav.prices">Цени</a>
+          <a href="laptops.html" data-i18n="nav.laptops">Лаптопи</a>
+          <a href="#services" data-i18n="nav.services">Услуги</a>
         </div>
 
         <div class="footer-col">
-          <h3>Работно време</h3>
-          <p>Понеделник - Петък: 09:00 - 19:00</p>
-          <p>Събота: 10:00 - 16:00</p>
-          <p>Неделя: Почивен ден</p>
+          <h3 data-i18n="footer.hours">Работно време</h3>
+          <p data-i18n="footer.md_fr">Понеделник - Петък: 09:00 - 19:00</p>
+          <p data-i18n="footer.sat">Събота: 10:00 - 16:00</p>
+          <p data-i18n="footer.sun">Неделя: Почивен ден</p>
         </div>
       </div>
 
-      <div class="copyright">
+      <div class="copyright" data-i18n="footer.rights">
         &copy; 2026 Бит & Байт. Всички права запазени.
       </div>
     </div>
   </footer>
 
-</body>
+  <script type="module" src="js/lang.js"></script>
 
+</body>
 
 </html>
