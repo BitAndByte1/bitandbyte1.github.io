@@ -232,7 +232,22 @@
 
   <script type="module">
     import { initServices } from './js/services.js';
-    initServices();
+
+    try {
+      console.log("Waiting for DOM...");
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          console.log("DOM ready, initializing...");
+          initServices();
+        });
+      } else {
+        console.log("DOM already ready, initializing...");
+        initServices();
+      }
+    } catch (e) {
+      alert("JS Error: " + e.message);
+      console.error(e);
+    }
   </script>
   <script type="module" src="js/lang.js"></script>
 
