@@ -22,23 +22,26 @@
         <span>Бит & Байт</span>
       </a>
       <nav class="nav-menu">
-        <a href="index.html" class="nav-link">Начало</a>
-        <a href="index.html#services" class="nav-link">Услуги</a>
-        <a href="laptops.html" class="nav-link active">Лаптопи</a>
-        <a href="prices.html" class="nav-link">Цени</a>
-        <a href="index.html#about" class="nav-link">За Нас</a>
-        <a href="index.html#contact" class="nav-link">Контакти</a>
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Начало</a>
+        <a href="index.html#services" class="nav-link" data-i18n="nav.services">Услуги</a>
+        <a href="laptops.html" class="nav-link active" data-i18n="nav.laptops">Лаптопи</a>
+        <a href="prices.html" class="nav-link" data-i18n="nav.prices">Цени</a>
+        <a href="index.html#about" class="nav-link" data-i18n="nav.about">За Нас</a>
+        <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Контакти</a>
       </nav>
-      <a href="laptops-en.html" class="nav-link"
-        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">EN</a>
+      <div class="lang-switcher" style="margin-left: 20px;">
+        <a href="#" class="lang-btn" data-lang="bg" style="margin-right:5px;">BG</a>
+        |
+        <a href="#" class="lang-btn" data-lang="en" style="margin-left:5px;">EN</a>
+      </div>
     </div>
   </header>
 
   <!-- HERO SMALL -->
   <section class="hero hero-small">
     <div class="container hero-content">
-      <h1>Лаптопи – сервиз и поддръжка</h1>
-      <p>Налични / примерни модели</p>
+      <h1 data-i18n="products.title">Лаптопи – сервиз и поддръжка</h1>
+      <p data-i18n="products.subtitle">Налични / примерни модели</p>
     </div>
   </section>
 
@@ -49,7 +52,7 @@
         style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
 
         <!-- Products will be loaded here dynamically -->
-        <p style="grid-column: 1/-1; text-align: center;">Зареждане на продукти...</p>
+        <p style="grid-column: 1/-1; text-align: center;" data-i18n="products.loading">Зареждане на продукти...</p>
 
       </div>
     </div>
@@ -58,6 +61,7 @@
   <!-- FIREBASE SCRIPTS -->
   <script type="module">
     import { getLaptops } from './js/database.js';
+    import { getLang, translations } from './js/lang.js?v=2'; // Import translation utils
 
     const container = document.getElementById('laptops-container');
 
@@ -66,9 +70,19 @@
       container.innerHTML = '';
 
       if (laptops.length === 0) {
-        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Все още няма добавени лаптопи.</p>';
+        // We can use a data-i18n on a created element or just set text based on current lang, 
+        // but for simplicity let's stick to simple text or better, rely on lang.js to update if we add the attribute.
+        // Dynamic content is harder to i18n fully without a helper.
+        // Let's use the dictionary directly for JS-generated content.
+        const currentLang = getLang(); // exported from lang.js
+        const t = translations[currentLang];
+
+        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">${t.products.empty}</p>`;
         return;
       }
+
+      const currentLang = getLang();
+      const t = translations[currentLang];
 
       laptops.forEach(laptop => {
         const card = document.createElement('div');
@@ -82,24 +96,42 @@
             <h3>${laptop.model}</h3>
             <p style="color: #4da3ff; font-weight: bold; font-size: 20px; margin: 10px 0;">${laptop.price} €</p>
             <p style="font-size: 14px; margin-bottom: 15px;">${laptop.description}</p>
-            <a href="product.html?id=${laptop.id}" class="btn btn-outline" style="width:100%; display:block; text-align:center;">Виж Детайли</a>
+            <a href="product.html?id=${laptop.id}" class="btn btn-outline" style="width:100%; display:block; text-align:center;">${t.products.details}</a>
           </div>
         `;
         container.appendChild(card);
       });
     }
 
+    // Small hack: wait for lang.js to ensure 'translations' object is ready if needed, 
+    // although imports are hoisted.
     displayLaptops();
+
+    // Listen for language change to re-render if needed? 
+    // Usually a page reload is easier for dynamic lists, or we export an event.
+    // For now, prompt user to reload if they really want dynamic content translated immediately,
+    // OR just reload page on lang switch (which lang.js doesn't do by default).
+    // Let's keep it simple: The text inside the database (description) WON'T translate automatically.
+    // The buttons "View Details" WILL translate if we re-render.
+
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('lang-btn')) {
+        setTimeout(displayLaptops, 100); // Re-render list with new lang labels
+      }
+    });
+
   </script>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="copyright">
+      <div class="copyright" data-i18n="footer.rights">
         &copy; 2026 Бит & Байт. Всички права запазени.
       </div>
     </div>
   </footer>
+
+  <script type="module" src="js/lang.js"></script>
 
 </body>
 

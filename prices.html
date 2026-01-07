@@ -21,23 +21,26 @@
         <span>Бит & Байт</span>
       </a>
       <nav class="nav-menu">
-        <a href="index.html" class="nav-link">Начало</a>
-        <a href="index.html#services" class="nav-link">Услуги</a>
-        <a href="laptops.html" class="nav-link">Лаптопи</a>
-        <a href="prices.html" class="nav-link active">Цени</a>
-        <a href="index.html#about" class="nav-link">За Нас</a>
-        <a href="index.html#contact" class="nav-link">Контакти</a>
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Начало</a>
+        <a href="index.html#services" class="nav-link" data-i18n="nav.services">Услуги</a>
+        <a href="laptops.html" class="nav-link" data-i18n="nav.laptops">Лаптопи</a>
+        <a href="prices.html" class="nav-link active" data-i18n="nav.prices">Цени</a>
+        <a href="index.html#about" class="nav-link" data-i18n="nav.about">За Нас</a>
+        <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Контакти</a>
       </nav>
-      <a href="prices-en.html" class="nav-link"
-        style="font-size: 12px; margin-left: 20px; border: 1px solid #555; padding: 4px 8px; border-radius: 4px;">EN</a>
+      <div class="lang-switcher" style="margin-left: 20px;">
+        <a href="#" class="lang-btn" data-lang="bg" style="margin-right:5px;">BG</a>
+        |
+        <a href="#" class="lang-btn" data-lang="en" style="margin-left:5px;">EN</a>
+      </div>
     </div>
   </header>
 
   <!-- HERO SMALL -->
   <section class="hero hero-small">
     <div class="container hero-content">
-      <h1>Ценоразпис</h1>
-      <p>Основни услуги и ремонти</p>
+      <h1 data-i18n="prices_page.title">Ценоразпис</h1>
+      <p data-i18n="prices_page.subtitle">Основни услуги и ремонти</p>
     </div>
   </section>
 
@@ -47,31 +50,36 @@
       <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
 
         <div class="feature-card" style="text-align: center;">
-          <h3 style="margin-bottom: 20px;">Почистване и профилактика</h3>
-          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 15 €</p>
+          <h3 style="margin-bottom: 20px;" data-i18n="prices_page.items.cleaning">Почистване и профилактика</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;"><span data-i18n="prices_page.from">от</span> 15
+            €</p>
         </div>
 
         <div class="feature-card" style="text-align: center;">
-          <h3 style="margin-bottom: 20px;">Смяна на термопаста</h3>
-          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 12 €</p>
+          <h3 style="margin-bottom: 20px;" data-i18n="prices_page.items.paste">Смяна на термопаста</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;"><span data-i18n="prices_page.from">от</span> 12
+            €</p>
         </div>
 
         <div class="feature-card" style="text-align: center;">
-          <h3 style="margin-bottom: 20px;">Почистване + термопаста</h3>
-          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 20 €</p>
+          <h3 style="margin-bottom: 20px;" data-i18n="prices_page.items.full">Почистване + термопаста</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;"><span data-i18n="prices_page.from">от</span> 20
+            €</p>
         </div>
 
         <div class="feature-card" style="text-align: center;">
-          <h3 style="margin-bottom: 20px;">Разглобяване / сглобяване</h3>
-          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;">от 10 €</p>
+          <h3 style="margin-bottom: 20px;" data-i18n="prices_page.items.assembly">Разглобяване / сглобяване</h3>
+          <p style="font-size: 24px; color: #4da3ff; font-weight: bold;"><span data-i18n="prices_page.from">от</span> 10
+            €</p>
         </div>
 
       </div>
 
       <div style="margin-top: 50px; text-align: center;">
-        <h3>Имате специфичен проблем?</h3>
-        <p style="margin-bottom: 20px; color: #ccc;">Свържете се с нас за безплатна консултация и диагностика.</p>
-        <a href="index.html#contact" class="btn">Контакти</a>
+        <h3 data-i18n="prices_page.specific_title">Имате специфичен проблем?</h3>
+        <p style="margin-bottom: 20px; color: #ccc;" data-i18n="prices_page.specific_text">Свържете се с нас за
+          безплатна консултация и диагностика.</p>
+        <a href="index.html#contact" class="btn" data-i18n="prices_page.contact_btn">Контакти</a>
       </div>
 
     </div>
@@ -80,11 +88,13 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="copyright">
-        &copy; 2024 Бит & Байт. Всички права запазени.
+      <div class="copyright" data-i18n="footer.rights">
+        &copy; 2026 Бит & Байт. Всички права запазени.
       </div>
     </div>
   </footer>
+
+  <script type="module" src="js/lang.js"></script>
 
 </body>
 

@@ -61,6 +61,20 @@ export const translations = {
             details: "Виж Детайли",
             specs: "Спецификации",
             interest: "Заяви Интерес"
+        },
+        prices_page: {
+            title: "Ценоразпис",
+            subtitle: "Основни услуги и ремонти",
+            items: {
+                cleaning: "Почистване и профилактика",
+                paste: "Смяна на термопаста",
+                full: "Почистване + термопаста",
+                assembly: "Разглобяване / сглобяване"
+            },
+            from: "от",
+            specific_title: "Имате специфичен проблем?",
+            specific_text: "Свържете се с нас за безплатна консултация и диагностика.",
+            contact_btn: "Контакти"
         }
     },
     en: {
@@ -125,6 +139,20 @@ export const translations = {
             details: "View Details",
             specs: "Specifications",
             interest: "Request Interest"
+        },
+        prices_page: {
+            title: "Price List",
+            subtitle: "Basic Services and Repairs",
+            items: {
+                cleaning: "Cleaning and Maintenance",
+                paste: "Thermal Paste Replacement",
+                full: "Cleaning + Thermal Paste",
+                assembly: "Disassembly / Assembly"
+            },
+            from: "from",
+            specific_title: "Have a specific problem?",
+            specific_text: "Contact us for a free consultation and diagnostics.",
+            contact_btn: "Contacts"
         }
     }
 };

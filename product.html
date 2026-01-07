@@ -109,8 +109,14 @@
                 <span>Бит & Байт</span>
             </a>
             <nav class="nav-menu">
-                <a href="laptops.html" class="nav-link"><i class="fas fa-arrow-left"></i> Назад към Лаптопи</a>
+                <a href="laptops.html" class="nav-link" data-i18n="nav.back"><i class="fas fa-arrow-left"></i> Назад към
+                    Лаптопи</a>
             </nav>
+            <div class="lang-switcher" style="margin-left: 20px;">
+                <a href="#" class="lang-btn" data-lang="bg" style="margin-right:5px;">BG</a>
+                |
+                <a href="#" class="lang-btn" data-lang="en" style="margin-left:5px;">EN</a>
+            </div>
         </div>
     </header>
 
@@ -133,14 +139,14 @@
                 <p id="p-description" style="font-size: 18px; margin-bottom: 20px;">Short description goes here.</p>
 
                 <div class="specs-box">
-                    <h3><i class="fas fa-list"></i> Спецификации</h3>
+                    <h3><i class="fas fa-list"></i> <span data-i18n="products.specs">Спецификации</span></h3>
                     <div id="p-specs" class="specs-content">
                         <!-- Specs will be injected here -->
                     </div>
                 </div>
 
                 <div style="margin-top: 30px;">
-                    <a href="index.html#contact" class="btn">Заяви Интерес</a>
+                    <a href="index.html#contact" class="btn" data-i18n="products.interest">Заяви Интерес</a>
                 </div>
             </div>
         </div>
@@ -201,6 +207,7 @@
 
         init();
     </script>
+    <script type="module" src="js/lang.js"></script>
 </body>
 
 </html>
