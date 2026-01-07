@@ -1,4 +1,5 @@
-export { translations } from './translations.js';
+import { translations } from './translations.js';
+export { translations };
 
 let currentLang = localStorage.getItem('site_lang') || 'bg';
 

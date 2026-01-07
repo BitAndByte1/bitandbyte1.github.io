@@ -116,12 +116,46 @@
                         <textarea id="description" rows="2" placeholder="Кратко описание..." required></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Спецификации (процесор, RAM, SSD и др.)</label>
-                        <textarea id="specs" rows="4" placeholder="Intel Core i5, 8GB RAM, 256GB SSD..."></textarea>
+                        <label>Спецификации</label>
+                        <!-- Detailed Specifications inputs -->
+                        <div style="background: #2a2a2a; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                            <h4 style="margin-top: 0; margin-bottom: 15px; color: #4da3ff;">Детайли</h4>
+
+                            <div class="form-group">
+                                <label>Процесор (CPU)</label>
+                                <input type="text" id="specCPU" placeholder="напр. Intel Core i5-8350U" required>
+                            </div>
+                            <div class="form-group">
+                                <label>RAM Памет</label>
+                                <input type="text" id="specRAM" placeholder="напр. 8GB DDR4" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Диск (Storage)</label>
+                                <input type="text" id="specStorage" placeholder="напр. 256GB SSD NVMe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Екран (Display)</label>
+                                <input type="text" id="specDisplay" placeholder="напр. 14 инча FHD IPS" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Видео карта (GPU)</label>
+                                <input type="text" id="specGPU" placeholder="напр. Intel UHD 620" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Операционна система (OS)</label>
+                                <input type="text" id="specOS" placeholder="напр. Windows 10 Pro" required>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Снимка</label>
-                        <input type="file" id="imageFile" accept="image/*" required>
+                        <label>Външен Линк (към официален сайт)</label>
+                        <input type="url" id="externalLink" placeholder="https://www.lenovo.com/...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Снимки (Първата ще е основна)</label>
+                        <input type="file" id="imageFile" accept="image/*" multiple required>
                     </div>
                     <p id="statusMessage" style="color: yellow; margin-bottom: 15px; display: none;"></p>
                     <button type="submit" class="btn">Добави Лаптоп</button>
