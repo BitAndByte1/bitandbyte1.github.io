@@ -1,4 +1,5 @@
-import { translations, getLang } from './translations.js';
+import { translations } from './translations.js';
+import { getLang } from './lang.js';
 
 export function initPrices() {
     renderPrices(getLang());
