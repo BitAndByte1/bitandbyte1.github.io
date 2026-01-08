@@ -19,11 +19,25 @@ function renderPrices(lang) {
         return;
     }
 
-    const categories = t.prices_page.items.categories;
-    container.innerHTML = ''; // Clear existing
-
     // Order: cleaning, hardware, software, data
     const order = ['cleaning', 'hardware', 'software', 'data'];
+
+    // Debug
+    // console.log("Rendering prices for:", lang);
+    if (!container) {
+        alert("Error: Prices container not found!");
+        return;
+    }
+
+    // Check if data exists
+    if (!t) { alert("Error: No translations for " + lang); return; }
+    if (!t.prices_page) { alert("Error: No prices_page data"); return; }
+    if (!t.prices_page.items) { alert("Error: No items data"); return; }
+    if (!t.prices_page.items.categories) {
+        alert("Error: No categories data in translations.js!");
+        console.log(t.prices_page.items);
+        return;
+    }
 
     order.forEach(key => {
         const cat = categories[key];
