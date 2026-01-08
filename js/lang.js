@@ -18,6 +18,7 @@ export function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('site_lang', lang);
     updatePageLanguage();
+    document.dispatchEvent(new CustomEvent('language-changed', { detail: { lang } }));
 }
 
 function updatePageLanguage() {

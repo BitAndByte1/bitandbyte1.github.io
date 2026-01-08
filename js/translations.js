@@ -112,10 +112,45 @@ export const translations = {
             title: "Ценоразпис",
             subtitle: "Основни услуги и ремонти",
             items: {
-                cleaning: "Почистване и профилактика",
-                paste: "Смяна на термопаста",
-                full: "Почистване + термопаста",
-                assembly: "Разглобяване / сглобяване"
+                categories: {
+                    cleaning: {
+                        title: "Почистване и Профилактика",
+                        list: [
+                            { name: "Почистване + смяна на термопаста", price: "25 - 45 лв." },
+                            { name: "Почистване след заливане с течност", price: "40 - 80 лв." },
+                            { name: "Смяна на термопадове", price: "10 - 20 лв." },
+                            { name: "Смазване/ремонт на вентилатор", price: "15 лв." }
+                        ]
+                    },
+                    hardware: {
+                        title: "Хардуерни Ремонти",
+                        list: [
+                            { name: "Диагностика (безплатна при ремонт)", price: "20 лв." },
+                            { name: "Смяна на диплей (матрица)", price: "30 лв. + част" },
+                            { name: "Смяна на клавиатура", price: "20 - 40 лв. + част" },
+                            { name: "Смяна на букса за захранване", price: "40 - 60 лв." },
+                            { name: "Смяна на панти / корпус", price: "30 - 60 лв." },
+                            { name: "Смяна на хард диск / SSD / RAM", price: "15 лв." }
+                        ]
+                    },
+                    software: {
+                        title: "Софтуерни Услуги",
+                        list: [
+                            { name: "Инсталиране на Windows + драйвери", price: "35 лв." },
+                            { name: "Инсталиране на Windows + запазване на данни", price: "45 лв." },
+                            { name: "Премахване на вируси", price: "25 - 50 лв." },
+                            { name: "Инсталиране на офис пакет / програми", price: "15 лв." }
+                        ]
+                    },
+                    data: {
+                        title: "Възстановяване на данни",
+                        list: [
+                            { name: "Логически изтрити данни", price: "от 40 лв." },
+                            { name: "Възстановяване от повреден HDD", price: "по договаряне" },
+                            { name: "Клониране на диск", price: "30 лв." }
+                        ]
+                    }
+                }
             },
             from: "от",
             specific_title: "Имате специфичен проблем?",
@@ -236,10 +271,45 @@ export const translations = {
             title: "Price List",
             subtitle: "Basic Services and Repairs",
             items: {
-                cleaning: "Cleaning and Maintenance",
-                paste: "Thermal Paste Replacement",
-                full: "Cleaning + Thermal Paste",
-                assembly: "Disassembly / Assembly"
+                categories: {
+                    cleaning: {
+                        title: "Cleaning & Maintenance",
+                        list: [
+                            { name: "Cleaning + Thermal Paste", price: "25 - 45 BGN" },
+                            { name: "Liquid Spill Cleaning", price: "40 - 80 BGN" },
+                            { name: "Thermal Pad Replacement", price: "10 - 20 BGN" },
+                            { name: "Fan Lubrication/Repair", price: "15 BGN" }
+                        ]
+                    },
+                    hardware: {
+                        title: "Hardware Repairs",
+                        list: [
+                            { name: "Diagnostics (Free with repair)", price: "20 BGN" },
+                            { name: "Screen Replacement", price: "30 BGN + part" },
+                            { name: "Keyboard Replacement", price: "20 - 40 BGN + part" },
+                            { name: "Power Jack Replacement", price: "40 - 60 BGN" },
+                            { name: "Hinge / Body Repair", price: "30 - 60 BGN" },
+                            { name: "HDD / SSD / RAM Replacement", price: "15 BGN" }
+                        ]
+                    },
+                    software: {
+                        title: "Software Services",
+                        list: [
+                            { name: "Windows Installation + Drivers", price: "35 BGN" },
+                            { name: "Windows + Data Backup", price: "45 BGN" },
+                            { name: "Virus Removal", price: "25 - 50 BGN" },
+                            { name: "Office / Software Installation", price: "15 BGN" }
+                        ]
+                    },
+                    data: {
+                        title: "Data Recovery",
+                        list: [
+                            { name: "Logically Deleted Data", price: "from 40 BGN" },
+                            { name: "Damaged HDD Recovery", price: "Negotiable" },
+                            { name: "Disk Cloning", price: "30 BGN" }
+                        ]
+                    }
+                }
             },
             from: "from",
             specific_title: "Have a specific problem?",
