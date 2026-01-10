@@ -132,38 +132,37 @@ export const translations = {
                     cleaning: {
                         title: "Почистване и Профилактика",
                         list: [
-                            { name: "Почистване + смяна на термопаста", price: "25 - 45 лв." },
-                            { name: "Почистване след заливане с течност", price: "40 - 80 лв." },
-                            { name: "Смяна на термопадове", price: "10 - 20 лв." },
-                            { name: "Смазване/ремонт на вентилатор", price: "15 лв." }
+                            { name: "Почистване + смяна на термопаста", price: "25 - 45 лв. / 13 - 23 €" },
+                            { name: "Почистване след заливане с течност", price: "40 - 80 лв. / 20 - 41 €" },
+                            { name: "Смяна на термопадове", price: "10 - 20 лв. / 5 - 10 €" },
+                            { name: "Смазване/ремонт на вентилатор", price: "15 лв. / 8 €" }
                         ]
                     },
                     hardware: {
                         title: "Хардуерни Ремонти",
                         list: [
-                            { name: "Диагностика (безплатна при ремонт)", price: "20 лв." },
-                            { name: "Смяна на диплей (матрица)", price: "30 лв. + част" },
-                            { name: "Смяна на клавиатура", price: "20 - 40 лв. + част" },
-                            { name: "Смяна на букса за захранване", price: "40 - 60 лв." },
-                            { name: "Смяна на панти / корпус", price: "30 - 60 лв." },
-                            { name: "Смяна на хард диск / SSD / RAM", price: "15 лв." }
+                            { name: "Диагностика (безплатна при ремонт)", price: "20 лв. / 10 €" },
+                            { name: "Смяна на диплей (матрица)", price: "30 лв. / 15 € + част" },
+                            { name: "Смяна на клавиатура", price: "20 - 40 лв. / 10 - 20 € + част" },
+                            { name: "Смяна на панти / корпус", price: "30 - 60 лв. / 15 - 31 €" },
+                            { name: "Смяна на хард диск / SSD / RAM", price: "15 лв. / 8 €" }
                         ]
                     },
                     software: {
                         title: "Софтуерни Услуги",
                         list: [
-                            { name: "Инсталиране на Windows + драйвери", price: "35 лв." },
-                            { name: "Инсталиране на Windows + запазване на данни", price: "45 лв." },
-                            { name: "Премахване на вируси", price: "25 - 50 лв." },
-                            { name: "Инсталиране на офис пакет / програми", price: "15 лв." }
+                            { name: "Инсталиране на Windows + драйвери", price: "35 лв. / 18 €" },
+                            { name: "Инсталиране на Windows + запазване на данни", price: "45 лв. / 23 €" },
+                            { name: "Премахване на вируси", price: "25 - 50 лв. / 13 - 26 €" },
+                            { name: "Инсталиране на офис пакет / програми", price: "15 лв. / 8 €" }
                         ]
                     },
                     data: {
                         title: "Възстановяване на данни",
                         list: [
-                            { name: "Логически изтрити данни", price: "от 40 лв." },
+                            { name: "Логически изтрити данни", price: "от 40 лв. / 20 €" },
                             { name: "Възстановяване от повреден HDD", price: "по договаряне" },
-                            { name: "Клониране на диск", price: "30 лв." }
+                            { name: "Клониране на диск", price: "30 лв. / 15 €" }
                         ]
                     }
                 }
@@ -307,38 +306,37 @@ export const translations = {
                     cleaning: {
                         title: "Cleaning & Maintenance",
                         list: [
-                            { name: "Cleaning + Thermal Paste", price: "25 - 45 BGN" },
-                            { name: "Liquid Spill Cleaning", price: "40 - 80 BGN" },
-                            { name: "Thermal Pad Replacement", price: "10 - 20 BGN" },
-                            { name: "Fan Lubrication/Repair", price: "15 BGN" }
+                            { name: "Cleaning + Thermal Paste", price: "25 - 45 BGN / 13 - 23 €" },
+                            { name: "Liquid Spill Cleaning", price: "40 - 80 BGN / 20 - 41 €" },
+                            { name: "Thermal Pad Replacement", price: "10 - 20 BGN / 5 - 10 €" },
+                            { name: "Fan Lubrication/Repair", price: "15 BGN / 8 €" }
                         ]
                     },
                     hardware: {
                         title: "Hardware Repairs",
                         list: [
-                            { name: "Diagnostics (Free with repair)", price: "20 BGN" },
-                            { name: "Screen Replacement", price: "30 BGN + part" },
-                            { name: "Keyboard Replacement", price: "20 - 40 BGN + part" },
-                            { name: "Power Jack Replacement", price: "40 - 60 BGN" },
-                            { name: "Hinge / Body Repair", price: "30 - 60 BGN" },
-                            { name: "HDD / SSD / RAM Replacement", price: "15 BGN" }
+                            { name: "Diagnostics (Free with repair)", price: "20 BGN / 10 €" },
+                            { name: "Screen Replacement", price: "30 BGN / 15 € + part" },
+                            { name: "Keyboard Replacement", price: "20 - 40 BGN / 10 - 20 € + part" },
+                            { name: "Hinge / Body Repair", price: "30 - 60 BGN / 15 - 31 €" },
+                            { name: "HDD / SSD / RAM Replacement", price: "15 BGN / 8 €" }
                         ]
                     },
                     software: {
                         title: "Software Services",
                         list: [
-                            { name: "Windows Installation + Drivers", price: "35 BGN" },
-                            { name: "Windows + Data Backup", price: "45 BGN" },
-                            { name: "Virus Removal", price: "25 - 50 BGN" },
-                            { name: "Office / Software Installation", price: "15 BGN" }
+                            { name: "Windows Installation + Drivers", price: "35 BGN / 18 €" },
+                            { name: "Windows + Data Backup", price: "45 BGN / 23 €" },
+                            { name: "Virus Removal", price: "25 - 50 BGN / 13 - 26 €" },
+                            { name: "Office / Software Installation", price: "15 BGN / 8 €" }
                         ]
                     },
                     data: {
                         title: "Data Recovery",
                         list: [
-                            { name: "Logically Deleted Data", price: "from 40 BGN" },
+                            { name: "Logically Deleted Data", price: "from 40 BGN / 20 €" },
                             { name: "Damaged HDD Recovery", price: "Negotiable" },
-                            { name: "Disk Cloning", price: "30 BGN" }
+                            { name: "Disk Cloning", price: "30 BGN / 15 €" }
                         ]
                     }
                 }
