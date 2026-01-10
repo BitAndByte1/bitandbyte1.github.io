@@ -358,9 +358,7 @@ img {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  /* Removed flex display to avoid layout stacking issues */
 }
 
 .chatbot-toggle {
@@ -376,6 +374,9 @@ img {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, background-color 0.3s;
+  position: relative;
+  /* Ensure it stays in flow or acts as anchor if needed */
+  z-index: 1002;
 }
 
 .chatbot-toggle:hover {
@@ -384,6 +385,10 @@ img {
 }
 
 .chat-window {
+  position: absolute;
+  bottom: 80px;
+  /* Position above the toggle */
+  right: 0;
   width: 350px;
   height: 450px;
   background-color: #1a1a1a;
@@ -391,12 +396,14 @@ img {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  /* No margin needed with absolute positioning */
   transform: scale(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;
   overflow: hidden;
   border: 1px solid #333;
+  z-index: 1001;
 }
 
 .chatbot-container.open .chat-window {
