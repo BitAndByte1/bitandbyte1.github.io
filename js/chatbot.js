@@ -135,7 +135,7 @@ export function initChatbot() {
     }
 
     async function sendEmailNotification(data) {
-        const email = "request@bitnbytebg.com";
+        const email = "info@bitnbytebg.com";
         const subject = `Нова заявка от ${data.name}`;
         const message = `
         Нова заявка за ремонт/услуга:
