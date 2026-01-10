@@ -147,21 +147,39 @@ export function initChatbot() {
         Дата: ${new Date().toLocaleString('bg-BG')}
         `;
 
-        await fetch(`https://formsubmit.co/ajax/${email}`, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                _subject: subject,
-                _cc: "nikolay@bitnbytebg.com",
-                name: data.name,
-                phone: data.phone,
-                service: data.service,
-                issue: data.issue,
-                message: message
-            })
-        });
+        try {
+            console.log("Sending email to:", email);
+            const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: subject,
+                    _cc: "nikolay@bitnbytebg.com",
+                    _captcha: "false", // Disable captcha for smoother experience
+                    _template: "table",
+                    name: data.name,
+                    phone: data.phone,
+                    service: data.service,
+                    issue: data.issue,
+                    message: message
+                })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.text();
+                throw new Error(`Server responded with ${response.status}: ${errorData}`);
+            }
+
+            const result = await response.json();
+            console.log("Email sent successfully:", result);
+
+        } catch (error) {
+            console.error("FAILED to send email notification:", error);
+            // We don't throw here to avoid breaking the UI flow, 
+            // but we log it clearly for debugging.
+        }
     }
 }
