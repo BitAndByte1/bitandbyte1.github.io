@@ -100,72 +100,106 @@
         <!-- DASHBOARD SECTION -->
         <div id="dashboardSection" class="hidden">
 
-            <div class="admin-container">
-                <h2>Добави Нов Лаптоп</h2>
-                <form id="addLaptopForm">
-                    <div class="form-group">
-                        <label>Марка / Модел</label>
-                        <input type="text" id="model" placeholder="напр. Dell Latitude 5490" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Цена (€)</label>
-                        <input type="number" id="price" placeholder="430" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Описание</label>
-                        <textarea id="description" rows="2" placeholder="Кратко описание..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Спецификации</label>
-                        <!-- Detailed Specifications inputs -->
-                        <div style="background: #2a2a2a; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-                            <h4 style="margin-top: 0; margin-bottom: 15px; color: #4da3ff;">Детайли</h4>
-
-                            <div class="form-group">
-                                <label>Процесор (CPU)</label>
-                                <input type="text" id="specCPU" placeholder="напр. Intel Core i5-8350U" required>
-                            </div>
-                            <div class="form-group">
-                                <label>RAM Памет</label>
-                                <input type="text" id="specRAM" placeholder="напр. 8GB DDR4" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Диск (Storage)</label>
-                                <input type="text" id="specStorage" placeholder="напр. 256GB SSD NVMe" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Екран (Display)</label>
-                                <input type="text" id="specDisplay" placeholder="напр. 14 инча FHD IPS" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Видео карта (GPU)</label>
-                                <input type="text" id="specGPU" placeholder="напр. Intel UHD 620" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Операционна система (OS)</label>
-                                <input type="text" id="specOS" placeholder="напр. Windows 10 Pro" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Външен Линк (към официален сайт)</label>
-                        <input type="url" id="externalLink" placeholder="https://www.lenovo.com/...">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Снимки (Първата ще е основна)</label>
-                        <input type="file" id="imageFile" accept="image/*" multiple required>
-                    </div>
-                    <p id="statusMessage" style="color: yellow; margin-bottom: 15px; display: none;"></p>
-                    <button type="submit" class="btn">Добави Лаптоп</button>
-                </form>
+            <!-- TABS -->
+            <div style="margin-bottom: 20px; border-bottom: 1px solid #333;">
+                <button id="tabLaptops" class="btn" style="background: #2a2a2a; margin-right: 10px;">Лаптопи</button>
+                <button id="tabAppointments" class="btn" style="background: transparent;">Заявки</button>
             </div>
 
-            <div class="container" style="margin-bottom: 50px;">
-                <h2>Налични Лаптопи</h2>
-                <div id="adminProductList" class="product-list">
-                    <!-- Products will be loaded here -->
+            <!-- LAPTOPS SECTION -->
+            <div id="laptopsSection">
+                <div class="admin-container">
+                    <h2>Добави Нов Лаптоп</h2>
+                    <form id="addLaptopForm">
+                        <div class="form-group">
+                            <label>Марка / Модел</label>
+                            <input type="text" id="model" placeholder="напр. Dell Latitude 5490" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Цена (€)</label>
+                            <input type="number" id="price" placeholder="430" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Описание</label>
+                            <textarea id="description" rows="2" placeholder="Кратко описание..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Спецификации</label>
+                            <!-- Detailed Specifications inputs -->
+                            <div style="background: #2a2a2a; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                                <h4 style="margin-top: 0; margin-bottom: 15px; color: #4da3ff;">Детайли</h4>
+
+                                <div class="form-group">
+                                    <label>Процесор (CPU)</label>
+                                    <input type="text" id="specCPU" placeholder="напр. Intel Core i5-8350U" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>RAM Памет</label>
+                                    <input type="text" id="specRAM" placeholder="напр. 8GB DDR4" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Диск (Storage)</label>
+                                    <input type="text" id="specStorage" placeholder="напр. 256GB SSD NVMe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Екран (Display)</label>
+                                    <input type="text" id="specDisplay" placeholder="напр. 14 инча FHD IPS" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Видео карта (GPU)</label>
+                                    <input type="text" id="specGPU" placeholder="напр. Intel UHD 620" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Операционна система (OS)</label>
+                                    <input type="text" id="specOS" placeholder="напр. Windows 10 Pro" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Външен Линк (към официален сайт)</label>
+                            <input type="url" id="externalLink" placeholder="https://www.lenovo.com/...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Снимки (Първата ще е основна)</label>
+                            <input type="file" id="imageFile" accept="image/*" multiple required>
+                        </div>
+                        <p id="statusMessage" style="color: yellow; margin-bottom: 15px; display: none;"></p>
+                        <button type="submit" class="btn">Добави Лаптоп</button>
+                    </form>
+                </div>
+
+                <div class="container" style="margin-bottom: 50px;">
+                    <h2>Налични Лаптопи</h2>
+                    <div id="adminProductList" class="product-list">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPOINTMENTS SECTION -->
+            <div id="appointmentsSection" class="hidden">
+                <div class="admin-container" style="max-width: 1000px;">
+                    <h2>Заявки за Услуги</h2>
+                    <div class="table-responsive">
+                        <table style="width: 100%; border-collapse: collapse; color: #ccc;">
+                            <thead>
+                                <tr style="background: #222; text-align: left;">
+                                    <th style="padding: 10px;">Дата</th>
+                                    <th style="padding: 10px;">Име</th>
+                                    <th style="padding: 10px;">Телефон</th>
+                                    <th style="padding: 10px;">Услуга</th>
+                                    <th style="padding: 10px;">Детайли</th>
+                                    <th style="padding: 10px;">Статус</th>
+                                    <th style="padding: 10px;">Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsList">
+                                <!-- Loaded via JS -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

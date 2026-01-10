@@ -256,22 +256,42 @@
     </div>
   </div>
 
+
+  <!-- CHATBOT -->
+  <div class="chatbot-container">
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>Асистент</span>
+        <button class="chat-close">&times;</button>
+      </div>
+      <div class="chat-body">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Пишете тук...">
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="chatbot-toggle">
+      <i class="fas fa-comments"></i>
+    </div>
+  </div>
+
   <script type="module">
     import { initServices } from './js/services.js';
+    import { initChatbot } from './js/chatbot.js';
 
     try {
-      console.log("Waiting for DOM...");
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
-          console.log("DOM ready, initializing...");
           initServices();
+          initChatbot();
         });
       } else {
-        console.log("DOM already ready, initializing...");
         initServices();
+        initChatbot();
       }
     } catch (e) {
-      alert("JS Error: " + e.message);
       console.error(e);
     }
   </script>

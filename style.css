@@ -352,6 +352,155 @@ img {
   }
 }
 
+/* ================= CHATBOT ================= */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+.chat-window {
+  width: 350px;
+  height: 450px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.chatbot-container.open .chat-window {
+  transform: scale(1);
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-message.bot {
+  background-color: #2a2a2a;
+  color: #ddd;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-message.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.chat-options button {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chat-options button:hover {
+  background: #007bff;
+  color: white;
+}
+
+.chat-input {
+  padding: 15px;
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  gap: 10px;
+  background: #111;
+}
+
+.chat-input input {
+  flex: 1;
+  background: #2a2a2a;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: white;
+  outline: none;
+}
+
+.chat-input button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 /* ================= SERVICE MODAL ================= */
 .service-card {
   cursor: pointer;
