@@ -10,8 +10,8 @@ export const translations = {
             back: "Назад към Лаптопи"
         },
         hero: {
-            title: "Вашият надежден сервиз за <br> <span class='text-accent'>компютри и лаптопи</span> в София",
-            subtitle: "Бърза диагностика, качествен ремонт и професионално обслужване за вашата техника в район Дианабад.",
+            title: "Компютърен сервиз от ново поколение – <br> <span class='text-accent'>взимане и връщане</span> от адрес.",
+            subtitle: "Защо да губите време в трафика? Ние ще вземем, ремонтираме и върнем вашата техника. Обслужваме <strong>цяла София</strong>.",
             btn_services: "Виж Услугите",
             btn_contact: "Свържи се с нас"
         },
@@ -27,6 +27,10 @@ export const translations = {
             software: {
                 title: "Софтуер",
                 text: "Инсталиране и преинсталиране на операционни системи, драйвери и специализиран софтуер. Премахване на вируси."
+            },
+            pickup: {
+                title: "Взимане от адрес",
+                text: "Ние ценим вашето време! Предлагаме взимане на техниката от вашия адрес и връщане след ремонт в рамките на цяла София."
             }
         },
         about: {
@@ -86,6 +90,18 @@ export const translations = {
                     "Мрежова сигурност и защита"
                 ],
                 process: "1. Оглед на помещението -> 2. Проектиране на мрежата -> 3. Инсталиране и настройка -> 4. Тестване на скоростта и покритието."
+            },
+            pickup: {
+                title: "Взимане и Връщане",
+                text: "Спестете време с нашата услуга за транспорт от врата до врата.",
+                details: "Ние разбираме, че ежедневието ви е натоварено. Затова предлагаме удобна услуга за взимане на повредена техника от вашия дом или офис и връщането ѝ след ремонт.",
+                includes: [
+                    "Транспорт от адрес до сервиз",
+                    "Транспорт от сервиз до адрес",
+                    "Застраховка по време на транспорт",
+                    "Уговорен час за посещение"
+                ],
+                process: "1. Заявка по телефона/чат -> 2. Посещение от наш куриер -> 3. Ремонт в сервиза -> 4. Връщане на устройството."
             },
             prices_btn: "Виж ценоразпис"
         },
@@ -168,8 +184,8 @@ export const translations = {
             back: "Back to Laptops"
         },
         hero: {
-            title: "Your reliable service for<br> <span class='text-accent'>computers and laptops</span> in Sofia",
-            subtitle: "Fast diagnostics, quality repair and professional service for your tech in Dianabad district.",
+            title: "Next generation computer usage – <br> <span class='text-accent'>pickup and return</span> from address.",
+            subtitle: "Why waste time in traffic? We will pick up, repair and return your tech. Serving <strong>all of Sofia</strong>.",
             btn_services: "View Services",
             btn_contact: "Contact Us"
         },
@@ -185,6 +201,10 @@ export const translations = {
             software: {
                 title: "Software",
                 text: "Installation and reinstallation of operating systems, drivers and specialized software. Virus removal."
+            },
+            pickup: {
+                title: "Pickup Service",
+                text: "We value your time! We offer device pickup from your address and return after repair within all of Sofia."
             }
         },
         about: {
@@ -244,6 +264,18 @@ export const translations = {
                     "Network security"
                 ],
                 process: "1. Site survey -> 2. Network design -> 3. Installation & setup -> 4. Speed & coverage testing."
+            },
+            pickup: {
+                title: "Pickup & Return",
+                text: "Save time with our door-to-door transport service.",
+                details: "We understand your daily life is busy. That's why we offer a convenient service to pick up damaged tech from your home or office and return it after repair.",
+                includes: [
+                    "Transport from address to service",
+                    "Transport from service to address",
+                    "Insurance during transport",
+                    "Scheduled visit time"
+                ],
+                process: "1. Request via phone/chat -> 2. Visit by our courier -> 3. Repair in service -> 4. Return of device."
             },
             prices_btn: "View Price List"
         },

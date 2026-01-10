@@ -31,12 +31,33 @@
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Контакти</a>
       </nav>
 
+      <div class="header-contacts" style="display: flex; align-items: center; gap: 15px; margin-right: 10px;">
+        <a href="tel:0884870152" class="nav-contact-item">
+          <i class="fas fa-phone-alt"></i> <span>0884 870 152</span>
+        </a>
+        <a href="mailto:todorovnikola00@gmail.com" class="nav-contact-item">
+          <i class="fas fa-envelope"></i> <span>request@bitnbyte.com</span>
+        </a>
+      </div>
+
       <div class="lang-switcher" style="margin-left: 20px;">
         <a href="#" class="lang-btn" data-lang="bg" style="margin-right:5px;">BG</a>
         |
         <a href="#" class="lang-btn" data-lang="en" style="margin-left:5px;">EN</a>
       </div>
     </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR3XNQJWZ2">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-RR3XNQJWZ2');
+    </script>
+
   </header>
 
   <!-- HERO SECTION -->
@@ -45,7 +66,7 @@
       <h1 data-i18n="hero.title">Вашият надежден сервиз за<br> <span class="text-accent">компютри и лаптопи</span> в
         София</h1>
       <p data-i18n="hero.subtitle">Бърза диагностика, качествен ремонт и професионално обслужване за вашата техника в
-        район Дианабад.</p>
+        цяла София.</p>
 
       <div class="hero-buttons">
         <a href="#services" class="btn" data-i18n="hero.btn_services">Виж Услугите</a>
@@ -78,6 +99,12 @@
           <p data-i18n="features.software.text">Инсталиране и преинсталиране на операционни системи, драйвери и
             специализиран софтуер. Премахване на
             вируси.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-truck"></i></div>
+          <h3 data-i18n="features.pickup.title">Взимане от адрес</h3>
+          <p data-i18n="features.pickup.text">Ние ценим вашето време! Предлагаме взимане на техниката от вашия адрес и
+            връщане след ремонт.</p>
         </div>
       </div>
     </div>
@@ -162,6 +189,17 @@
           </div>
         </div>
 
+        <div class="service-card" data-service="pickup">
+          <div class="service-img">
+            <i class="fas fa-truck-fast" style="font-size: 50px;"></i>
+          </div>
+          <div class="service-info">
+            <h3 data-i18n="services.pickup.title">Взимане и Връщане</h3>
+            <p style="color: #888; font-size: 14px;" data-i18n="services.pickup.text">Спестете време с нашата услуга за
+              транспорт от врата до врата.</p>
+          </div>
+        </div>
+
       </div>
 
       <div style="text-align: center; margin-top: 40px;">
@@ -180,7 +218,7 @@
               София</span></p>
           <a href="tel:0884870152"><i class="fas fa-phone" style="width: 20px;"></i> 0884 870 152</a>
           <a href="mailto:todorovnikola00@gmail.com"><i class="fas fa-envelope" style="width: 20px;"></i>
-            todorovnikola00@gmail.com</a>
+            request@bitnbyte.com</a>
         </div>
 
         <div class="footer-col">
@@ -230,22 +268,42 @@
     </div>
   </div>
 
+
+  <!-- CHATBOT -->
+  <div class="chatbot-container">
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>Асистент</span>
+        <button class="chat-close">&times;</button>
+      </div>
+      <div class="chat-body">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Пишете тук...">
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="chatbot-toggle">
+      <i class="fas fa-comments"></i>
+    </div>
+  </div>
+
   <script type="module">
     import { initServices } from './js/services.js';
+    import { initChatbot } from './js/chatbot.js';
 
     try {
-      console.log("Waiting for DOM...");
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
-          console.log("DOM ready, initializing...");
           initServices();
+          initChatbot();
         });
       } else {
-        console.log("DOM already ready, initializing...");
         initServices();
+        initChatbot();
       }
     } catch (e) {
-      alert("JS Error: " + e.message);
       console.error(e);
     }
   </script>

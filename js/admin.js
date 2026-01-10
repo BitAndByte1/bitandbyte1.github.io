@@ -1,5 +1,6 @@
 import { monitorAuth, login, logout } from './auth.js';
 import { addLaptop, getLaptops, deleteLaptop } from './backend.js';
+import { getAppointments, updateAppointmentStatus, deleteAppointment } from './appointments.js';
 
 const loginSection = document.getElementById('loginSection');
 const dashboardSection = document.getElementById('dashboardSection');
@@ -7,6 +8,13 @@ const logoutBtn = document.getElementById('logoutBtn');
 const loginForm = document.getElementById('loginForm');
 const addLaptopForm = document.getElementById('addLaptopForm');
 const productList = document.getElementById('adminProductList');
+
+// Tab Elements
+const tabLaptops = document.getElementById('tabLaptops');
+const tabAppointments = document.getElementById('tabAppointments');
+const laptopsSection = document.getElementById('laptopsSection');
+const appointmentsSection = document.getElementById('appointmentsSection');
+const appointmentsList = document.getElementById('appointmentsList');
 
 // Initialize Auth
 monitorAuth(loginSection, dashboardSection, logoutBtn);
@@ -23,6 +31,23 @@ loginForm.addEventListener('submit', async (e) => {
 logoutBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     await logout();
+});
+
+// Tab Switching
+tabLaptops.addEventListener('click', () => {
+    laptopsSection.classList.remove('hidden');
+    appointmentsSection.classList.add('hidden');
+    tabLaptops.style.background = '#2a2a2a';
+    tabAppointments.style.background = 'transparent';
+    loadProducts();
+});
+
+tabAppointments.addEventListener('click', () => {
+    laptopsSection.classList.add('hidden');
+    appointmentsSection.classList.remove('hidden');
+    tabAppointments.style.background = '#2a2a2a';
+    tabLaptops.style.background = 'transparent';
+    loadAppointments();
 });
 
 // Add Laptop Handler
@@ -83,7 +108,7 @@ addLaptopForm.addEventListener('submit', async (e) => {
     }
 });
 
-// Load and Display Products for Admin
+// Load and Display Products
 async function loadProducts() {
     if (!productList) return;
 
@@ -113,11 +138,58 @@ async function loadProducts() {
     });
 }
 
-// Make removeLaptop available globally
+// Load and Display Appointments
+async function loadAppointments() {
+    if (!appointmentsList) return;
+
+    appointmentsList.innerHTML = '<tr><td colspan="7">Зареждане...</td></tr>';
+    const appointments = await getAppointments();
+    appointmentsList.innerHTML = '';
+
+    if (appointments.length === 0) {
+        appointmentsList.innerHTML = '<tr><td colspan="7">Няма намерени заявки.</td></tr>';
+        return;
+    }
+
+    appointments.forEach(app => {
+        const date = new Date(app.createdAt.seconds * 1000).toLocaleString('bg-BG');
+        const statusColor = app.status === 'done' ? 'green' : (app.status === 'in-progress' ? 'orange' : 'white');
+
+        const tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid #333';
+        tr.innerHTML = `
+            <td style="padding: 10px;">${date}</td>
+            <td style="padding: 10px;">${app.name || '-'}</td>
+            <td style="padding: 10px;">${app.phone || '-'}</td>
+            <td style="padding: 10px;">${app.service || '-'}</td>
+            <td style="padding: 10px;">${app.issue || '-'}</td>
+            <td style="padding: 10px; color: ${statusColor};">${app.status}</td>
+            <td style="padding: 10px;">
+                <button class="btn" style="padding: 5px 10px; font-size: 12px; background: green;" onclick="window.completeApp('${app.id}')">Готово</button>
+                <button class="btn" style="padding: 5px 10px; font-size: 12px; background: #d9534f;" onclick="window.deleteApp('${app.id}')">Изтрий</button>
+            </td>
+        `;
+        appointmentsList.appendChild(tr);
+    });
+}
+
+// Global Functions for Actions
 window.removeLaptop = async (id) => {
     if (confirm('Сигурни ли сте, че искате да изтриете този лаптоп?')) {
         await deleteLaptop(id);
         loadProducts();
+    }
+};
+
+window.completeApp = async (id) => {
+    await updateAppointmentStatus(id, 'done');
+    loadAppointments();
+};
+
+window.deleteApp = async (id) => {
+    if (confirm('Сигурни ли сте, че искате да изтриете тази заявка?')) {
+        await deleteAppointment(id);
+        loadAppointments();
     }
 };
 
