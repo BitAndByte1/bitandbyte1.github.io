@@ -29,29 +29,28 @@ function renderPrices(lang) {
         const cat = categories[key];
         if (!cat) return;
 
-        const section = document.createElement('div');
-        section.className = 'price-section';
+        const card = document.createElement('div');
+        card.className = 'price-card';
 
         const title = document.createElement('h3');
         title.className = 'price-category-title';
         title.innerHTML = `<i class="fas fa-caret-right text-accent"></i> ${cat.title}`;
-        section.appendChild(title);
+        card.appendChild(title);
 
-        const table = document.createElement('table');
-        table.className = 'price-table';
+        const list = document.createElement('ul');
+        list.className = 'price-list';
 
-        const tbody = document.createElement('tbody');
         cat.list.forEach(item => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td class="price-name">${item.name}</td>
-                <td class="price-val">${item.price}</td>
+            const li = document.createElement('li');
+            li.className = 'price-item';
+            li.innerHTML = `
+                <span class="price-name">${item.name}</span>
+                <span class="price-val text-accent">${item.price}</span>
             `;
-            tbody.appendChild(tr);
+            list.appendChild(li);
         });
-        table.appendChild(tbody);
-        section.appendChild(table);
+        card.appendChild(list);
 
-        container.appendChild(section);
+        container.appendChild(card);
     });
 }
