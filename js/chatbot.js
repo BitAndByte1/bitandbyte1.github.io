@@ -101,6 +101,15 @@ export function initChatbot() {
 
                 try {
                     await addAppointment(appointmentData);
+
+                    // Send email notification
+                    try {
+                        await sendEmailNotification(appointmentData);
+                        console.log('Email notification sent');
+                    } catch (emailErr) {
+                        console.error('Failed to send email:', emailErr);
+                    }
+
                     addMessage('bot', 'Вашата заявка е приета успешно! Ще се свържем с вас скоро за потвърждение.');
                 } catch (e) {
                     addMessage('bot', 'Възникна грешка при записването. Моля обадете се на 0884 870 152.');
@@ -123,5 +132,36 @@ export function initChatbot() {
                 }
                 break;
         }
+    }
+
+    async function sendEmailNotification(data) {
+        const email = "request@bitnbytebg.com";
+        const subject = `Нова заявка от ${data.name}`;
+        const message = `
+        Нова заявка за ремонт/услуга:
+        
+        Име: ${data.name}
+        Телефон: ${data.phone}
+        Услуга: ${data.service}
+        Описание: ${data.issue}
+        Дата: ${new Date().toLocaleString('bg-BG')}
+        `;
+
+        await fetch(`https://formsubmit.co/ajax/${email}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: subject,
+                _cc: "nikolay@bitnbytebg.com",
+                name: data.name,
+                phone: data.phone,
+                service: data.service,
+                issue: data.issue,
+                message: message
+            })
+        });
     }
 }
