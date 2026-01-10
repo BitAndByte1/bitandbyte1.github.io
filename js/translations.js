@@ -11,7 +11,7 @@ export const translations = {
         },
         hero: {
             title: "Вашият надежден сервиз за <br> <span class='text-accent'>компютри и лаптопи</span> в София",
-            subtitle: "Бърза диагностика, качествен ремонт и професионално обслужване за вашата техника в район Дианабад.",
+            subtitle: "Бърза диагностика, качествен ремонт и удобно <strong>взимане от адрес</strong> за вашата техника в <strong>цяла София</strong>.",
             btn_services: "Виж Услугите",
             btn_contact: "Свържи се с нас"
         },
@@ -27,6 +27,10 @@ export const translations = {
             software: {
                 title: "Софтуер",
                 text: "Инсталиране и преинсталиране на операционни системи, драйвери и специализиран софтуер. Премахване на вируси."
+            },
+            pickup: {
+                title: "Взимане от адрес",
+                text: "Ние ценим вашето време! Предлагаме взимане на техниката от вашия адрес и връщане след ремонт в рамките на цяла София."
             }
         },
         about: {
@@ -170,7 +174,7 @@ export const translations = {
         },
         hero: {
             title: "Your reliable service for<br> <span class='text-accent'>computers and laptops</span> in Sofia",
-            subtitle: "Fast diagnostics, quality repair and professional service for your tech in Dianabad district.",
+            subtitle: "Fast diagnostics, quality repair and convenient <strong>pickup from address</strong> for your tech in <strong>all of Sofia</strong>.",
             btn_services: "View Services",
             btn_contact: "Contact Us"
         },
@@ -186,6 +190,10 @@ export const translations = {
             software: {
                 title: "Software",
                 text: "Installation and reinstallation of operating systems, drivers and specialized software. Virus removal."
+            },
+            pickup: {
+                title: "Pickup Service",
+                text: "We value your time! We offer device pickup from your address and return after repair within all of Sofia."
             }
         },
         about: {
