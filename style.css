@@ -178,7 +178,7 @@ img {
 }
 
 .bg-darker {
-  background-color: #0a0a0a;
+  background-color: #161616;
 }
 
 .section-title {
@@ -204,7 +204,7 @@ img {
 }
 
 .feature-card {
-  background: #111;
+  background: #222;
   padding: 30px;
   border-radius: 6px;
   border: 1px solid #222;
@@ -271,7 +271,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: #007bff;
+  /* Changed to #007bff */
   overflow: hidden;
 }
 
@@ -280,6 +281,10 @@ img {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
+}
+
+.service-img i {
+  color: #007bff !important;
 }
 
 .service-card:hover .service-img img {
