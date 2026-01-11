@@ -25,18 +25,27 @@ function renderPrices(lang) {
     // Order: cleaning, hardware, software, data
     const order = ['cleaning', 'hardware', 'software', 'data'];
 
-    order.forEach(key => {
+    order.forEach((key, index) => {
         const cat = categories[key];
         if (!cat) return;
 
-        const card = document.createElement('div');
-        card.className = 'price-card';
+        // Create Section
+        const section = document.createElement('section');
+        // Alternating backgrounds: even -> bg-1 (#080808), odd -> bg-2 (#222)
+        const bgClass = index % 2 === 0 ? 'section-bg-1' : 'section-bg-2';
+        section.className = `price-section ${bgClass}`;
 
+        // Create Container
+        const contentContainer = document.createElement('div');
+        contentContainer.className = 'container';
+
+        // Title
         const title = document.createElement('h3');
         title.className = 'price-category-title';
         title.innerHTML = `<i class="fas fa-caret-right text-accent"></i> ${cat.title}`;
-        card.appendChild(title);
+        contentContainer.appendChild(title);
 
+        // List
         const list = document.createElement('ul');
         list.className = 'price-list';
 
@@ -49,8 +58,9 @@ function renderPrices(lang) {
             `;
             list.appendChild(li);
         });
-        card.appendChild(list);
+        contentContainer.appendChild(list);
 
-        container.appendChild(card);
+        section.appendChild(contentContainer);
+        container.appendChild(section);
     });
 }
