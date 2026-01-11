@@ -157,7 +157,7 @@ export function initChatbot() {
                 },
                 body: JSON.stringify({
                     _subject: subject,
-                    _cc: "nikolay@bitnbytebg.com,request@bitnbytebg.com",
+                    _cc: "nikolay@bitnbytebg.com",
                     _captcha: "false", // Disable captcha for smoother experience
                     _template: "table",
                     name: data.name,
