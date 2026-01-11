@@ -792,163 +792,209 @@ img {
   font-size: 15px;
 }
 
-/* ================= WHY CHOOSE US ================= */
+
+/* ================= WHY CHOOSE US (PREMIUM) ================= */
 .why-choose-us {
-  padding: 80px 0;
-  background-color: #111;
-  text-align: center;
+  padding: 100px 0;
+  background-color: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-us::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 140%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .benefit-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .benefit-item {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 50px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.benefit-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 123, 255, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .benefit-icon {
-  font-size: 40px;
+  font-size: 50px;
   color: #007bff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.benefit-item:hover .benefit-icon {
+  transform: scale(1.1) rotate(5deg);
+  text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
 }
 
 .benefit-title {
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 15px;
   color: #fff;
+  font-weight: 700;
 }
 
 .benefit-text {
-  color: #aaa;
+  color: #888;
   font-size: 15px;
+  line-height: 1.6;
 }
 
-/* ================= HOW IT WORKS ================= */
+/* ================= HOW IT WORKS (REFINED) ================= */
 .how-it-works {
-  padding: 80px 0;
+  padding: 100px 0;
   background-color: #080808;
   text-align: center;
+}
+
+.process-subtitle {
+  color: #666;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 30px;
 }
 
 .steps-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 60px;
+  margin-top: 80px;
   position: relative;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
 }
 
-/* Connecting line (desktop only) */
-@media (min-width: 900px) {
+/* Better Progress Line */
+@media (min-width: 1024px) {
   .steps-container::before {
     content: '';
     position: absolute;
-    top: 50px;
-    left: 100px;
-    right: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, #007bff, #0056b3);
+    top: 60px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #007bff, transparent);
     z-index: 0;
-    opacity: 0.3;
+    opacity: 0.2;
   }
 }
 
 .step-card {
   position: relative;
   z-index: 1;
-  background: #151515;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #333;
+  background: transparent;
+  padding: 0 20px;
   flex: 1;
   min-width: 200px;
-  transition: transform 0.3s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-5px);
-  border-color: #007bff;
+  text-align: center;
 }
 
 .step-number {
-  width: 40px;
-  height: 40px;
-  background: #007bff;
-  color: #fff;
+  width: 60px;
+  height: 60px;
+  background: #111;
+  color: #007bff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
-  margin: -50px auto 20px;
-  /* Pull up */
-  border: 4px solid #080808;
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0 auto 30px;
+  border: 2px solid #333;
+  box-shadow: 0 0 0 10px #080808;
+  transition: all 0.3s;
+}
+
+.step-card:hover .step-number {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
 }
 
 .step-title {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 19px;
+  margin-bottom: 15px;
   color: #fff;
+  font-weight: 600;
 }
 
 .step-desc {
   font-size: 14px;
-  color: #bbb;
+  color: #777;
+  line-height: 1.5;
 }
 
-/* ================= FAQ SECTION ================= */
+/* ================= FAQ SECTION (POLISHED) ================= */
 .faq-section {
-  padding: 80px 0;
-  background-color: #1a1a1a;
+  padding: 100px 0;
+  background-color: #0d0d0d;
 }
 
 .faq-container {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 .faq-item {
-  margin-bottom: 15px;
-  border-radius: 8px;
-  background: #222;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: #161616;
   overflow: hidden;
-  border: 1px solid #333;
+  border: 1px solid #222;
+  transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+  border-color: #333;
 }
 
 .faq-question {
   width: 100%;
-  padding: 20px;
+  padding: 25px 30px;
   text-align: left;
   background: none;
   border: none;
   color: #fff;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.faq-question:hover {
-  background: #2a2a2a;
 }
 
 .faq-question i {
   color: #007bff;
-  transition: transform 0.3s;
+  font-size: 14px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.faq-question.active {
+  background: rgba(0, 123, 255, 0.03);
 }
 
 .faq-question.active i {
@@ -958,14 +1004,14 @@ img {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background: #1d1d1d;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .faq-answer p {
-  padding: 20px;
-  color: #ccc;
+  padding: 0 30px 25px;
+  color: #999;
   font-size: 15px;
   margin: 0;
-  border-top: 1px solid #333;
+  line-height: 1.7;
 }
