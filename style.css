@@ -119,6 +119,7 @@ img {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   font-size: 24px;
   font-weight: bold;
@@ -140,12 +141,11 @@ img {
 }
 
 .header-right {
+  flex: 1;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
-  flex-shrink: 0;
-  margin-left: auto;
-  /* Push to right */
 }
 
 .lang-switcher {
@@ -709,8 +709,10 @@ img {
 
 /* ================= HEADER CONTACTS ================= */
 .header-contacts {
-  margin-left: auto;
-  /* Push to the right if needed */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
   padding-right: 15px;
   border-right: 1px solid #333;
 }
