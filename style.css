@@ -699,7 +699,7 @@ img {
 /* ================= PRICES CARDS ================= */
 .prices-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 30px;
   margin-bottom: 50px;
 }
