@@ -770,182 +770,182 @@ img {
   font-weight: bold;
   white-space: nowrap;
   font-size: 15px;
+}
 
-  /* ================= WHY CHOOSE US ================= */
-  .why-choose-us {
-    padding: 80px 0;
-    background-color: #111;
-    text-align: center;
-  }
+/* ================= WHY CHOOSE US ================= */
+.why-choose-us {
+  padding: 80px 0;
+  background-color: #111;
+  text-align: center;
+}
 
-  .benefit-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
-  }
+.benefit-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
 
-  .benefit-item {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    padding: 20px;
-  }
+.benefit-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 20px;
+}
 
-  .benefit-icon {
-    font-size: 40px;
-    color: #007bff;
-    margin-bottom: 20px;
-  }
+.benefit-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
 
-  .benefit-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #fff;
-  }
+.benefit-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
 
-  .benefit-text {
-    color: #aaa;
-    font-size: 15px;
-  }
+.benefit-text {
+  color: #aaa;
+  font-size: 15px;
+}
 
-  /* ================= HOW IT WORKS ================= */
-  .how-it-works {
-    padding: 80px 0;
-    background-color: #080808;
-    text-align: center;
-  }
+/* ================= HOW IT WORKS ================= */
+.how-it-works {
+  padding: 80px 0;
+  background-color: #080808;
+  text-align: center;
+}
 
-  .steps-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 60px;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 60px;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 
-  /* Connecting line (desktop only) */
-  @media (min-width: 900px) {
-    .steps-container::before {
-      content: '';
-      position: absolute;
-      top: 50px;
-      left: 100px;
-      right: 100px;
-      height: 2px;
-      background: linear-gradient(90deg, #007bff, #0056b3);
-      z-index: 0;
-      opacity: 0.3;
-    }
+/* Connecting line (desktop only) */
+@media (min-width: 900px) {
+  .steps-container::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    right: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    z-index: 0;
+    opacity: 0.3;
   }
+}
 
-  .step-card {
-    position: relative;
-    z-index: 1;
-    background: #151515;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    flex: 1;
-    min-width: 200px;
-    transition: transform 0.3s ease;
-  }
+.step-card {
+  position: relative;
+  z-index: 1;
+  background: #151515;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+}
 
-  .step-card:hover {
-    transform: translateY(-5px);
-    border-color: #007bff;
-  }
+.step-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+}
 
-  .step-number {
-    width: 40px;
-    height: 40px;
-    background: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    margin: -50px auto 20px;
-    /* Pull up */
-    border: 4px solid #080808;
-  }
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: -50px auto 20px;
+  /* Pull up */
+  border: 4px solid #080808;
+}
 
-  .step-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #fff;
-  }
+.step-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
 
-  .step-desc {
-    font-size: 14px;
-    color: #bbb;
-  }
+.step-desc {
+  font-size: 14px;
+  color: #bbb;
+}
 
-  /* ================= FAQ SECTION ================= */
-  .faq-section {
-    padding: 80px 0;
-    background-color: #1a1a1a;
-  }
+/* ================= FAQ SECTION ================= */
+.faq-section {
+  padding: 80px 0;
+  background-color: #1a1a1a;
+}
 
-  .faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  .faq-item {
-    margin-bottom: 15px;
-    border-radius: 8px;
-    background: #222;
-    overflow: hidden;
-    border: 1px solid #333;
-  }
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: #222;
+  overflow: hidden;
+  border: 1px solid #333;
+}
 
-  .faq-question {
-    width: 100%;
-    padding: 20px;
-    text-align: left;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-  .faq-question:hover {
-    background: #2a2a2a;
-  }
+.faq-question:hover {
+  background: #2a2a2a;
+}
 
-  .faq-question i {
-    color: #007bff;
-    transition: transform 0.3s;
-  }
+.faq-question i {
+  color: #007bff;
+  transition: transform 0.3s;
+}
 
-  .faq-question.active i {
-    transform: rotate(180deg);
-  }
+.faq-question.active i {
+  transform: rotate(180deg);
+}
 
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background: #1d1d1d;
-  }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #1d1d1d;
+}
 
-  .faq-answer p {
-    padding: 20px;
-    color: #ccc;
-    font-size: 15px;
-    margin: 0;
-    border-top: 1px solid #333;
-  }
+.faq-answer p {
+  padding: 20px;
+  color: #ccc;
+  font-size: 15px;
+  margin: 0;
+  border-top: 1px solid #333;
 }

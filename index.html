@@ -402,15 +402,39 @@
     import { initServices } from './js/services.js';
     import { initChatbot } from './js/chatbot.js';
 
+    // FAQ Accordion Logic
+    function initFAQ() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(q => {
+        q.addEventListener('click', () => {
+          const answer = q.nextElementSibling;
+          const isActive = q.classList.contains('active');
+
+          // Close all others
+          document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.classList.remove('active');
+            btn.nextElementSibling.style.maxHeight = null;
+          });
+
+          if (!isActive) {
+            q.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+    }
+
     try {
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           initServices();
           initChatbot();
+          initFAQ();
         });
       } else {
         initServices();
         initChatbot();
+        initFAQ();
       }
     } catch (e) {
       console.error(e);

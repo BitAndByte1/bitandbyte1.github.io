@@ -58,6 +58,30 @@
     </div>
   </section>
 
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-search"></i></div>
+          <h3 class="benefit-title">Free Diagnostics</h3>
+          <p class="benefit-text">You pay nothing if we cannot fix the problem or if you decline the repair.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3 class="benefit-title">Express Service</h3>
+          <p class="benefit-text">Most repairs are completed within 24-48 hours.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="benefit-title">Warranty</h3>
+          <p class="benefit-text">You receive a warranty for every repair and parts used.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- HIGHLIGHTS / FEATURES -->
   <section class="section bg-darker">
     <div class="container">
@@ -104,6 +128,37 @@
             style="width: 100%; height: 300px; background: #222; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
             <i class="fas fa-users" style="font-size: 60px; color: #333;"></i>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works?</h2>
+      <p style="color: #aaa; margin-bottom: 20px;">Easy, fast and convenient for you.</p>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Contact Us</h3>
+          <p class="step-desc">Call us or write via the contact form / chat.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Pickup</h3>
+          <p class="step-desc">We will come to your address to pick up the device.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Repair</h3>
+          <p class="step-desc">We perform diagnostics and repair in our service center.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Return</h3>
+          <p class="step-desc">We return your repaired device to your doorstep.</p>
         </div>
       </div>
     </div>
@@ -165,6 +220,58 @@
     </div>
   </section>
 
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container faq-container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How long does the repair take?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Standard repairs take 1 to 3 business days. For more complex cases or when parts need to be ordered, the
+            timeframe may be extended, and you will be notified in advance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you perform repairs on-site?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>To ensure the highest quality, we prefer to perform repairs in our specialized service center. We offer
+            free pickup and return of the device from/to your address.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What warranty do you provide?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>All hardware repairs have a minimum of 3 months warranty on labor. New parts have their own warranty (from
+            6 to 24 months), which we provide to you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is diagnostics really free?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! Diagnostics is completely free if you accept the repair quote. If the device is unrepairable or you
+            decline the repair, you still don't owe any diagnostic fee.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="container">
@@ -198,6 +305,68 @@
       </div>
     </div>
   </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-container">
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>Assistant</span>
+        <button class="chat-close">&times;</button>
+      </div>
+      <div class="chat-body">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type here...">
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="chatbot-toggle">
+      <i class="fas fa-comments"></i>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initServices } from './js/services.js';
+    import { initChatbot } from './js/chatbot.js';
+
+    // FAQ Accordion Logic
+    function initFAQ() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(q => {
+        q.addEventListener('click', () => {
+          const answer = q.nextElementSibling;
+          const isActive = q.classList.contains('active');
+
+          document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.classList.remove('active');
+            btn.nextElementSibling.style.maxHeight = null;
+          });
+
+          if (!isActive) {
+            q.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+    }
+
+    try {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          initServices();
+          initChatbot();
+          initFAQ();
+        });
+      } else {
+        initServices();
+        initChatbot();
+        initFAQ();
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  </script>
 
 </body>
 
