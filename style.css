@@ -90,9 +90,9 @@ img {
 
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 20px;
   /* Prevent items from touching */
 }
 
