@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За Нас – Бит & Байт</title>
+    <meta name="description"
+        content="Историята на Бит & Байт - двама студенти с мисия да предоставят честен и качествен компютърен сервиз.">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Бит & Байт">
+                <span>Бит & Байт</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Начало</a>
+                <a href="index.html#services" class="nav-link" data-i18n="nav.services">Услуги</a>
+                <a href="laptops.html" class="nav-link" data-i18n="nav.laptops">Лаптопи</a>
+                <a href="prices.html" class="nav-link" data-i18n="nav.prices">Цени</a>
+                <a href="about.html" class="nav-link active" data-i18n="nav.about">За Нас</a>
+                <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Контакти</a>
+            </nav>
+            <div class="lang-switcher" style="margin-left: 20px;">
+                <a href="#" class="lang-btn" data-lang="bg" style="margin-right:5px;">BG</a>
+                |
+                <a href="#" class="lang-btn" data-lang="en" style="margin-left:5px;">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SMALL -->
+    <section class="hero hero-small">
+        <div class="container hero-content">
+            <h1>Нашата История</h1>
+            <p>Повече от просто сервиз</p>
+        </div>
+    </section>
+
+    <!-- ABOUT CONTENT -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 18px; color: #ddd;">
+                <h2 class="section-title">Кои сме ние?</h2>
+                <p style="margin-bottom: 20px;">
+                    Здравейте! Ние сме <strong>Бит & Байт</strong>, но зад това име всъщност стоим ние – двама студенти,
+                    водени от една проста, но силна цел: да направим технологиите да работят за хората, а не против тях.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    Всичко започна в една студентска стая, затрупана с дънни платки, кабели и мечти. Това, което
+                    стартира като хоби – да помагаме на приятели с бавни лаптопи или счупени екрани – бързо прерасна в
+                    нещо повече. Разбрахме, че в София има нужда от сервиз, който не просто "поправя неща", а изгражда
+                    доверие.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    Знаем какво е да разчиташ на лаптопа си за лекции, работа или просто за връзка със света. Знаем и
+                    колко е стресиращо, когато техниката те предаде. Затова създадохме "Бит & Байт" – мястото, където
+                    няма скрити такси, няма излишни усложнения и където отношението е лично.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    Ние не сме голяма корпорация. Ние сме ентусиасти, които влагат сърце във всеки ремонт. Учим се всеки
+                    ден, развиваме се и сме благодарни на всеки един от вас, който ни се доверява.
+                </p>
+                <p style="margin-bottom: 30px;">
+                    Благодарим ви, че сте част от нашата история!
+                </p>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <img src="images/logo.png" alt="Екипът" style="max-width: 200px; opacity: 0.8;">
+                    <p style="margin-top: 20px; font-style: italic;">– Екипът на Бит & Байт</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHATBOT -->
+    <div class="chatbot-container">
+        <div class="chat-window">
+            <div class="chat-header">
+                <span>Асистент</span>
+                <button class="chat-close">&times;</button>
+            </div>
+            <div class="chat-body">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Пишете тук...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright" data-i18n="footer.rights">
+                &copy; 2026 Бит & Байт. Всички права запазени.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/lang.js"></script>
+    <script type="module">
+        import { initChatbot } from './js/chatbot.js';
+        try {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initChatbot);
+            } else {
+                initChatbot();
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    </script>
+
+</body>
+
+</html>
