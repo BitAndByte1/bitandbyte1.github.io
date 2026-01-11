@@ -283,6 +283,10 @@ img {
   transition: transform 0.5s;
 }
 
+.service-img i {
+  color: #007bff !important;
+}
+
 .service-card:hover .service-img img {
   transform: scale(1.1);
 }
