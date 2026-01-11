@@ -77,6 +77,26 @@ img {
   color: #000;
 }
 
+/* ================= LANG SWITCHER ================= */
+.lang-btn {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #151515;
+}
+
+.lang-btn:hover {
+  border-color: #007bff;
+  transform: translateY(-2px);
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #fff;
+}
+
 /* ================= HEADER & NAV ================= */
 .main-header {
   background-color: rgba(0, 0, 0, 0.9);
