@@ -716,6 +716,17 @@ img {
   background-color: #222;
 }
 
+.price-card {
+  background: #151515;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+  margin: 0 auto;
+  /* Center the card */
+}
+
 .price-category-title {
   font-size: 24px;
   margin-bottom: 30px;

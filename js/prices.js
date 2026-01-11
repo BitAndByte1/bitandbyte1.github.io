@@ -39,11 +39,15 @@ function renderPrices(lang) {
         const contentContainer = document.createElement('div');
         contentContainer.className = 'container';
 
+        // Create Card
+        const card = document.createElement('div');
+        card.className = 'price-card';
+
         // Title
         const title = document.createElement('h3');
         title.className = 'price-category-title';
         title.innerHTML = `<i class="fas fa-caret-right text-accent"></i> ${cat.title}`;
-        contentContainer.appendChild(title);
+        card.appendChild(title);
 
         // List
         const list = document.createElement('ul');
@@ -58,8 +62,9 @@ function renderPrices(lang) {
             `;
             list.appendChild(li);
         });
-        contentContainer.appendChild(list);
+        card.appendChild(list);
 
+        contentContainer.appendChild(card);
         section.appendChild(contentContainer);
         container.appendChild(section);
     });
