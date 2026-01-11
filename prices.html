@@ -72,10 +72,33 @@
   </footer>
 
   <script type="module" src="js/lang.js"></script>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-container">
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>Асистент</span>
+        <button class="chat-close">&times;</button>
+      </div>
+      <div class="chat-body">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Пишете тук...">
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="chatbot-toggle">
+      <i class="fas fa-comments"></i>
+    </div>
+  </div>
+
   <script type="module">
     import { initPrices } from './js/prices.js?v=2';
+    import { initChatbot } from './js/chatbot.js';
     try {
       initPrices();
+      initChatbot();
     } catch (e) {
       alert("JS Error: " + e.message);
       console.error(e);

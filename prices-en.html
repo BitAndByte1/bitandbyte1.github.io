@@ -87,6 +87,39 @@
     </div>
   </footer>
 
+  <!-- CHATBOT -->
+  <div class="chatbot-container">
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>Assistant</span>
+        <button class="chat-close">&times;</button>
+      </div>
+      <div class="chat-body">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type here...">
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="chatbot-toggle">
+      <i class="fas fa-comments"></i>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initChatbot } from './js/chatbot.js';
+    try {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChatbot);
+      } else {
+        initChatbot();
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  </script>
+
 </body>
 
 </html>
