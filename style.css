@@ -178,7 +178,7 @@ img {
 }
 
 .bg-darker {
-  background-color: #0a0a0a;
+  background-color: #161616;
 }
 
 .section-title {
@@ -204,7 +204,7 @@ img {
 }
 
 .feature-card {
-  background: #111;
+  background: #222;
   padding: 30px;
   border-radius: 6px;
   border: 1px solid #222;
