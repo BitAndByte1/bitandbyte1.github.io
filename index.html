@@ -468,22 +468,27 @@
       }
     }
 
+    // Execute Mobile Menu independent of other scripts
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+      initMobileMenu();
+    }
+
     try {
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           initServices();
           initChatbot();
           initFAQ();
-          initMobileMenu();
         });
       } else {
         initServices();
         initChatbot();
         initFAQ();
-        initMobileMenu();
       }
     } catch (e) {
-      console.error(e);
+      console.error("Error initializing services:", e);
     }
   </script>
   <script type="module" src="js/lang.js"></script>
