@@ -392,9 +392,51 @@ img {
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+    gap: 0;
+    /* Remove global gap effect */
+    row-gap: 15px;
+    /* Consistent vertical spacing */
+    justify-content: space-between;
+    /* Spread logo and items properly */
+  }
+
+  .logo {
+    order: 1;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Ensure header-right stays on the right */
+  .header-right {
+    order: 2;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
   .nav-menu {
-    display: none;
-    /* Mobile menu to be implemented if needed */
+    display: flex;
+    width: 100%;
+    order: 3;
+    justify-content: space-evenly;
+    /* Symmetrical distribution */
+    gap: 0;
+    /* Let space-evenly handle it */
+    margin-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 0 5px;
   }
 
   .about-grid {
@@ -403,6 +445,11 @@ img {
 
   .hero h1 {
     font-size: 36px;
+  }
+
+  /* Adjust hero padding to account for taller header */
+  .hero {
+    padding-top: 140px;
   }
 }
 
