@@ -143,7 +143,7 @@ export const translations = {
                         list: [
                             { name: "Диагностика (безплатна при ремонт)", price: "20 лв. / 10 €" },
                             { name: "Смяна на диплей (матрица)", price: "30 лв. / 15 € + част" },
-                            { name: "Смяна на клавиатура", price: "20 - 40 лв. / 10 - 20 € + част" },
+                            { name: "Смяна на част", price: "20 - 40 лв. / 10 - 20 € + част" },
                             { name: "Смяна на панти / корпус", price: "30 - 60 лв. / 15 - 31 €" },
                             { name: "Смяна на хард диск / SSD / RAM", price: "15 лв. / 8 €" }
                         ]
@@ -317,7 +317,7 @@ export const translations = {
                         list: [
                             { name: "Diagnostics (Free with repair)", price: "20 BGN / 10 €" },
                             { name: "Screen Replacement", price: "30 BGN / 15 € + part" },
-                            { name: "Keyboard Replacement", price: "20 - 40 BGN / 10 - 20 € + part" },
+                            { name: "Part Replacement", price: "20 - 40 BGN / 10 - 20 € + part" },
                             { name: "Hinge / Body Repair", price: "30 - 60 BGN / 15 - 31 €" },
                             { name: "HDD / SSD / RAM Replacement", price: "15 BGN / 8 €" }
                         ]
